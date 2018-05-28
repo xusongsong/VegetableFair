@@ -95,7 +95,7 @@ function findViewPointByName(viewPointName) {
  */
 function addView(viewPointName, viewPointDescr) {
 	// 新增视点避免名称重复
-	var nameArr=findViewPointByName(viewPointName);
+	var nameArr = findViewPointByName(viewPointName);
 	for(var i=0;i<nameArr.length;i++){
 		if(nameArr[i] == viewPointName){
 			alert("视点名称已存在!");
@@ -171,9 +171,11 @@ function deleteView(id) {
 function openModify(thisId,descr) {
 	/** 修改功能框中赋值* */
 	// 名称-name
-	var viewInputText = $("#" + thisId).val().split("_")[1];
+	var divValueArr = document.getElementById(thisId).getAttribute("value").split("_");
+	consolel.log(divValueArr);
+	var viewInputText = divValueArr[1];
 	// 备注-descr
-	var viewTextarea = $("#" + thisId).val().split("_")[2];
+	var viewTextarea = divValueArr[2];
 	viewTextarea = viewTextarea == "null" ? "" : viewTextarea;
 	$("#viewInputText").val(viewInputText);
 	$("#viewTextarea").val(viewTextarea);
@@ -181,7 +183,7 @@ function openModify(thisId,descr) {
 	$('.bzxg_menu_sd').show();
 	/** 视点修改框---确定* */
 	$('#modifySure').unbind('click').click(function() {
-		var id = $("#" + thisId).val().split("_")[0];
+		var id = divValueArr[0];
 		modifyView(id,descr);
 		$('.bzxg_menu_sd').hide();
 	});
@@ -438,27 +440,28 @@ function HideWebDialog() {
  */
 function saveWebDialog(flage) {
 	if(flage){
-		function VPSDKCtrl::FireOnToolsNotify(str,id)
-		{
-	var msg = webobject.GetToolsResult().GetConfigValueByKey("Param");
-	var msgs = msg.split("@#");
-	if (msgs[0] == "1") {// 保存
-		// 视点名称
-		WegditViewName = msgs[1];
-		// 视点备注
-		WegditViewNote = msgs[2];
-		if(!WegditViewName){
-			alert("视点名称不能为空!");
-			return;
-		}
-		addView(WegditViewName, WegditViewNote);
-		HideWebDialog();
-	} else {// 取消或关闭
-		HideWebDialog();
-	}
+		function VPSDKCtrl::FireOnToolsNotify(str,id){
+			alert(2);
+			var msg = webobject.GetToolsResult().GetConfigValueByKey("Param");
+			var msgs = msg.split("@#");
+			if (msgs[0] == "1") {// 保存
+				// 视点名称
+				WegditViewName = msgs[1];
+				// 视点备注
+				WegditViewNote = msgs[2];
+				if(!WegditViewName){
+					alert("视点名称不能为空!");
+					return;
+				}
+				addView(WegditViewName, WegditViewNote);
+				HideWebDialog();
+			} else {// 取消或关闭
+				HideWebDialog();
+			}
 		}
 	}
 }
+
 /** **********************************************移动框********************************************* */
 function showWegdit(x, y) {
 	// 设置位置为当前屏幕中间

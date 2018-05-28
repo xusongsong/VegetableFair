@@ -2499,7 +2499,7 @@
 				<!--三维地图-->
 				<!-- <div id="map3D"
 					style="float: right; width: 100%; height: 100%; background: #D5D5D5;"></div> -->
-				<div class="alltk" id="tjsd">
+				<!-- <div class="alltk" id="tjsd">
 					添加视点
 					<div class="sdsc_tk">
 						<ul class="sdsc_tk_top">
@@ -2524,7 +2524,7 @@
 						</ul>
 					</div>
 					<div class="tk_zsjt"></div>
-				</div>
+				</div> -->
 <!--				人脸识别弹窗-->
 				<div id="rlsb" class="gmqp">
 					<div class="alltk" style="width: 294px;">
