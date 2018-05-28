@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="VegetableFair"
+  id="myeclipse.1503563721298"
+  context-root="/OM"
+  j2ee-spec="1.7"
+  archive="VegetableFair.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

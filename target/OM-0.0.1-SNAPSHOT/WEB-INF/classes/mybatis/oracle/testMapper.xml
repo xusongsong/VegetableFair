@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="point">
+	<select id="queryPointService" resultType="com.coorun.entity.PointService">
+		SELECT * FROM (
+			SELECT t.id,t.name,'oracle' as type,Rownum FROM kelan_point_service t WHERE ROWNUM <![CDATA[<]]> 20 ) s
+		WHERE rownum <![CDATA[<]]> 10
+	</select>
+</mapper>

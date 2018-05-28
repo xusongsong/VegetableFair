@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+/* 人口管理-统计分析图标 */
+.tjfx_menu_total{height:50%;overflow-y:auto;}
+/*总人口图表  */
+.population_chart{height:260px;width:260px;}
+/*人口树结果  */
+#populationTree{display:none;}
+.map_dttc_menu_tree #jz{padding-bottom:200px;}

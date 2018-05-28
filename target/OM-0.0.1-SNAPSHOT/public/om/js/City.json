@@ -1,0 +1,93 @@
+[
+    {
+       "AREACODE" : "330100",
+       "AREANAME" : "杭州市",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "500",
+       "DESC" : "HZ",
+       "ENAME" : "H",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330101",
+       "AREANAME" : "市辖区",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "500",
+       "DESC" : "SX",
+       "ENAME" : "H",
+       "ISCUSTOM" : "1"
+    },
+    {
+       "AREACODE" : "330102",
+       "AREANAME" : "上城区",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "500",
+       "DESC" : "SC",
+       "ENAME" : "H",
+       "ISCUSTOM" : "1"
+    },
+    {
+       "AREACODE" : "330200",
+       "AREANAME" : "宁波市",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "500",
+       "DESC" : "NB",
+       "ENAME" : "N",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330281",
+       "AREANAME" : "余姚市",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "500",
+       "DESC" : "YY",
+       "ENAME" : "Y",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320100",
+       "AREANAME" : "南京市",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "500",
+       "DESC" : "NJ",
+       "ENAME" : "N",
+       "ISCUSTOM" : "1"
+    },
+    {
+       "AREACODE" : "320105",
+       "AREANAME" : "建邺区",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "500",
+       "DESC" : "JY",
+       "ENAME" : "J",
+       "ISCUSTOM" : "1"
+    },
+    {
+       "AREACODE" : "360100",
+       "AREANAME" : "南昌市",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "500",
+       "DESC" : "NC",
+       "ENAME" : "N",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "360102",
+       "AREANAME" : "东湖区",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "500",
+       "DESC" : "DH",
+       "ENAME" : "D",
+       "ISCUSTOM" : "1" 
+    }
+    
+]

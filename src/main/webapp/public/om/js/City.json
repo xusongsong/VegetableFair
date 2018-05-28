@@ -1,0 +1,435 @@
+[
+    {
+       "AREACODE" : "330100",
+       "AREANAME" : "杭州市",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "H",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330101",
+       "AREANAME" : "市辖区",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "S",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330102",
+       "AREANAME" : "上城区",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "S",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330103",
+       "AREANAME" : "下城区",
+       "LOG" : "120.17",
+       "LAT" : "30.25",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "X",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330104",
+       "AREANAME" : "江干区",
+       "LOG" : "120.2",
+       "LAT" : "30.27",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "J",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330105",
+       "AREANAME" : "拱墅区",
+       "LOG" : "120.13",
+       "LAT" : "30.32",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "G",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330106",
+       "AREANAME" : "西湖区",
+       "LOG" : "120.13",
+       "LAT" : "30.27",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "X",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330108",
+       "AREANAME" : "滨江区",
+       "LOG" : "120.2",
+       "LAT" : "30.2",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "B",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330109",
+       "AREANAME" : "萧山区",
+       "LOG" : "120.27",
+       "LAT" : "30.17",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "X",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330110",
+       "AREANAME" : "余杭区",
+       "LOG" : "120.3",
+       "LAT" : "30.42",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "Y",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330122",
+       "AREANAME" : "桐庐县",
+       "LOG" : "119.67",
+       "LAT" : "29.8",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "T",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330127",
+       "AREANAME" : "淳安县",
+       "LOG" : "119.03",
+       "LAT" : "29.6",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "C",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330182",
+       "AREANAME" : "建德市",
+       "LOG" : "119.28",
+       "LAT" : "29.48",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "J",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330183",
+       "AREANAME" : "富阳市",
+       "LOG" : "119.95",
+       "LAT" : "30.05",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "F",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330185",
+       "AREANAME" : "临安区",
+       "LOG" : "119.72",
+       "LAT" : "30.23",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "L",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320100",
+       "AREANAME" : "南京市",
+       "LOG" : "118.8",
+       "LAT" : "32.05",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "N",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320101",
+       "AREANAME" : "市辖区",
+       "LOG" : "118.8",
+       "LAT" : "32.05",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "N",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320102",
+       "AREANAME" : "玄武区",
+       "LOG" : "118.8",
+       "LAT" : "32.05",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "X",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320103",
+       "AREANAME" : "白下区",
+       "LOG" : "118.78",
+       "LAT" : "32.03",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "B",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320104",
+       "AREANAME" : "秦淮区",
+       "LOG" : "118.8",
+       "LAT" : "32.02",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "Q",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320105",
+       "AREANAME" : "建邺区",
+       "LOG" : "118.75",
+       "LAT" : "32.03",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "J",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320106",
+       "AREANAME" : "鼓楼区",
+       "LOG" : "117.18",
+       "LAT" : "34.28",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "G",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320107",
+       "AREANAME" : "下关区",
+       "LOG" : "118.73",
+       "LAT" : "32.08",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "X",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320111",
+       "AREANAME" : "浦口区",
+       "LOG" : "118.62",
+       "LAT" : "32.05",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "P",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320113",
+       "AREANAME" : "栖霞区",
+       "LOG" : "118.88",
+       "LAT" : "32.12",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "Q",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "3201114",
+       "AREANAME" : "雨花台区",
+       "LOG" : "118.77",
+       "LAT" : "32",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "Y",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320115",
+       "AREANAME" : "江宁区",
+       "LOG" : "118.85",
+       "LAT" : "31.95",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "J",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320116",
+       "AREANAME" : "六合区",
+       "LOG" : "118.83",
+       "LAT" : "32.35",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "L",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320124",
+       "AREANAME" : "溧水县",
+       "LOG" : "119.02",
+       "LAT" : "31.65",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "L",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "320125",
+       "AREANAME" : "高淳县",
+       "LOG" : "118.88",
+       "LAT" : "31.33",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "G",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330400",
+       "AREANAME" : "嘉兴市",
+       "LOG" : "120.7",
+       "LAT" : "30.77",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "J",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330401",
+       "AREANAME" : "市辖区",
+       "LOG" : "120.7",
+       "LAT" : "30.77",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "S",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330700",
+       "AREANAME" : "金华市",
+       "LOG" : "119.65",
+       "LAT" : "29.08",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "J",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330701",
+       "AREANAME" : "市辖区",
+       "LOG" : "119.65",
+       "LAT" : "29.08",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "S",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330600",
+       "AREANAME" : "绍兴市",
+       "LOG" : "120.57",
+       "LAT" : "30",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "S",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330683",
+       "AREANAME" : "嵊州市",
+       "LOG" : "120.82",
+       "LAT" : "29.58",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "S",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330800",
+       "AREANAME" : "衢州市",
+       "LOG" : "118.87",
+       "LAT" : "28.93",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "Q",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330825",
+       "AREANAME" : "龙游县",
+       "LOG" : "119.17",
+       "LAT" : "29.03",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "L",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330300",
+       "AREANAME" : "温州市",
+       "LOG" : "120.65",
+       "LAT" : "28.02",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "W",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330326",
+       "AREANAME" : "平阳县",
+       "LOG" : "120.57",
+       "LAT" : "27.67",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "P",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330329",
+       "AREANAME" : "泰顺县",
+       "LOG" : "119.72",
+       "LAT" : "27.57",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "Q",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330324",
+       "AREANAME" : "永嘉县",
+       "LOG" : "120.68",
+       "LAT" : "28.15",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "Y",
+       "ISCUSTOM" : "1" 
+    },
+    {
+       "AREACODE" : "330327",
+       "AREANAME" : "苍南县",
+       "LOG" : "120.4",
+       "LAT" : "27.5",
+       "RANGE" : "",
+       "DESC" : "",
+       "ENAME" : "C",
+       "ISCUSTOM" : "1" 
+    }
+    
+   
+    
+]

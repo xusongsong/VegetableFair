@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+    "http://getahead.org/dwr/dwr20.dtd">
+<dwr>
+<allow>
+<!-- Reverse Ajax Stock push Demo Config
+	<create creator="new" javascript="StocksPusher">
+	<param name="class" value="com.test.dwr.servlet.Test"/>
+	</create>
+
+	<convert converter="bean" match="com.test.dwr.bean.Message"> 
+		<param name="include" value="id,context" />
+	</convert>
+	 -->
+
+    <create creator="new" javascript="snapshotPush">
+       <param name="class" value="com.coorun.faceidentifymanage.mq.realtimemessage.SnapshotPushCallback"/>
+    </create>
+
+    <create creator="new" javascript="alarmPush">
+       <param name="class" value="com.coorun.faceidentifymanage.mq.alarmessage.AlarmPushCallback"/>
+    </create>
+</allow>
+</dwr>

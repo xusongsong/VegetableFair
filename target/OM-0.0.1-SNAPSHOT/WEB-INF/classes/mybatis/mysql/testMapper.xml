@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="point">
+	<select id="queryPointService" resultType="com.coorun.entity.PointService">
+		SELECT t.id,t.`NAME`,'mysql' AS TYPE FROM kelan_point_service t  LIMIT 1,9
+	</select>
+</mapper>
