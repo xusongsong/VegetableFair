@@ -73,7 +73,7 @@ function getLabelList(pageNo){
 					  pageNo:pageNo};
 	//获取后端结果集集合
 	var data = findLabelPoint(labelLevel);
-	//循环遍历所有列表文字要素，并删除
+	//循环遍历所有列表文字要素,并删除
 	delLabelText();
 	//删除当前添加标注图片
 	if(!addLabelFlage){//若当前没有开启标注添加则删除
@@ -408,8 +408,7 @@ function startUpdateLabel(id){
  */
 function getPositionAgain(){
 	//调用SDL多进程事件(鼠标点击事件)
-	function VPSDKCtrl::FireOnLButtonUp(x,y)
-	{
+	function VPSDKCtrl::FireOnLButtonUp(x,y){
 		//根据全局修改状态变量进行判定
 		if(updateLabelFlage){
 		 var pos = map3D.coordTransformation(3,{
@@ -840,8 +839,9 @@ function labelPickEvent(){
     //获取当前拾取文字标注三维坐标
     var pos = map3D.getLabelValue(vectorPickLayer).points.split(',');
     //拼接属性弹窗参数路径
-    var labelAttributeParamUrl = labelAttributeUrl + "?name=" + textValue[0] + "&x=" + textValue[1] + "&y=" + textValue[2];
+    var labelAttributeParamUrl = labelAttributeUrl + "?name=" + encodeURIComponent(textValue[0]) + "&x=" + textValue[1] + "&y=" + textValue[2];
     var id = textValue[3];
+    console.log(labelAttributeParamUrl);
     //创建属性弹窗
     createLabelAttributeDialog(pos,id,labelAttributeParamUrl);
     //绑定拾取事件

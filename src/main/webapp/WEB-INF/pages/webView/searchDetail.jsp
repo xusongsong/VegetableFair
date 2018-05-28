@@ -30,6 +30,7 @@
 	});
 	//对页面端传递过来的参数进行解析
 	function getParam() {
+		//str : name=10号楼 & x=120.537320681 & y=31.8585748845
 		var names = [];
 		var values = [];
 		//location对象 含有当前URL的信息. 属性 href 整个URL字符串
@@ -71,7 +72,7 @@
 		}
 		//attributeAjax(x,y);
 		//$('#name').text(name?name:'详情');
-		$('#address').text(address?'地址 : '+address:'名称: '+name);
+		$('#address').text(address?'地址 : '+address : '名称: '+name);
 	 	//$('#address').text('地址 : ' + (address?address:'无'));
 		$('#jd').text('经度 : ' + (x?x:'无'));
 		$('#wd').text('纬度 : ' + (y?y:'无')); 

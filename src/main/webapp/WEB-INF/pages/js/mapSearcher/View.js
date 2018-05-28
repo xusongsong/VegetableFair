@@ -171,19 +171,20 @@ function deleteView(id) {
 function openModify(thisId,descr) {
 	/** 修改功能框中赋值* */
 	// 名称-name
-	var divValueArr = document.getElementById(thisId).getAttribute("value").split("_");
-	consolel.log(divValueArr);
-	var viewInputText = divValueArr[1];
+	var ulValue = document.getElementById(thisId).getAttribute("value");
+	var ulValueArr = ulValue.split('_');
+	//console.log(ulValue);
+	var viewInputText = ulValueArr[1];
 	// 备注-descr
-	var viewTextarea = divValueArr[2];
+	var viewTextarea = ulValueArr[2];
 	viewTextarea = viewTextarea == "null" ? "" : viewTextarea;
 	$("#viewInputText").val(viewInputText);
 	$("#viewTextarea").val(viewTextarea);
 	// 修改框显隐
 	$('.bzxg_menu_sd').show();
 	/** 视点修改框---确定* */
-	$('#modifySure').unbind('click').click(function() {
-		var id = divValueArr[0];
+	$('#modifySure').unbind('click').click(function(){
+		var id = ulValueArr[0];
 		modifyView(id,descr);
 		$('.bzxg_menu_sd').hide();
 	});
