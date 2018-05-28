@@ -7,9 +7,6 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-/*地图工具页面跳转*/
-import com.coorun.entity.VideoPathResult;
-import com.coorun.services.SecurityManageService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,8 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.coorun.entity.LabelResult;
 import com.coorun.entity.PathResult;
+/*地图工具页面跳转*/
+import com.coorun.entity.VideoPathResult;
 import com.coorun.entity.ViewResult;
 import com.coorun.services.SceneManagerService;
+import com.coorun.services.SecurityManageService;
 import com.coorun.util.Pager;
 import com.coorun.util.RetResult;
 
