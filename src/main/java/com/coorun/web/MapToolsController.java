@@ -242,7 +242,7 @@ public class MapToolsController {
 	public String loadVideoPlaySG() {
 		return "iframe/videoPlaySG";
 	}
-	
+
 	/**
 	 * 寿光视频资源属性弹窗
 	 * 

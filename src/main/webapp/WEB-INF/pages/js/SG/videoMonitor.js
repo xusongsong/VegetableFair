@@ -86,7 +86,7 @@ function getVideoList(param){
 			return;
 		}
 		//创建图片要素图层(初始化的时候创建只创建一次)
-		//createVideoImageLayer();
+		createVideoImageLayer();
 		//开启拾取事件(初始化时值开启一次)
 		videoFlage = false;
 	}
@@ -663,7 +663,7 @@ function videoShowOrHideSix(indexCode){
 		createMapFeature(level);
 		$("#xy_"+indexCode).val('1');
 	}
-	//控制父层级显影，取得每一上层级父层级indexCode编号
+	//控制父层级显影,取得每一上层级父层级indexCode编号
 	childrenLinkParent(indexCode);
 }
 
@@ -889,6 +889,9 @@ function loadImagLayer(level){
 	var videoImageValue = level.indexCode + "," + level.name + ","  + level.pixel + "," + createTime;
 	//判断当前拾取的是哪个图层(适用于一个场景同时存在多拾取事件)
 	var ename = '1';
+	//测试数据
+	level.longitude = "120.53746909";
+	level.latitude = "31.85751499";
 	//判断当前对象的经纬度是否为空，为空则不创建要素
 	if(level.longitude == '' || level.latitude == ''){
 		 return;
@@ -949,7 +952,7 @@ function videoPickUp(){
 	vectorPickLayer = map3D.labelPick(vectorAllLayer); // 图片拾取
 	pickFlage = false;
 	//开启响应器(SDK多进程事件所有响应事件统一入口)
-	//FireOnResponserNotifAll();
+	FireOnResponserNotifAll();
 }
 
 /**---------------------------------------------------------------------------------------------------------------------------
@@ -1076,7 +1079,7 @@ function showVideoListReady(){
 		"order":"0"
 	});
 	//默认点击二号展厅
-	videoSearchInfo("二层展厅");
+	//videoSearchInfo("二层展厅");
 }
 
 /**-----------------------------------------------------创建菜博会文字信息----------------------------------**/

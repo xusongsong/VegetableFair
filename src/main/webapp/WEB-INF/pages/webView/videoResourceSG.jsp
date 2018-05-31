@@ -73,7 +73,7 @@
 		for(var i = 0; i < urlParamArray.length; i++){
 			switch(urlParamArray[i].name){
 			case 'name':
-				name = urlParamArray[i].value;
+				name = decodeURIComponent(urlParamArray[i].value);
 				break;
 			case 'indexCode':
 				indexCode = urlParamArray[i].value;
@@ -88,7 +88,7 @@
 				latitude = urlParamArray[i].value;
 				break;
 			case 'createTime':
-				createTime = urlParamArray[i].value;
+				createTime = decodeURIComponent(urlParamArray[i].value);
 				break;
 			default:
 				break;
@@ -107,7 +107,7 @@
 		<div class="alltk">
 			<div class="map_ss_tk">
 				<ul class="sdsc_tk_top">
-					<span style="margin-left: 10px; font-size: 14px;"><strong>寿光摄像</strong></span>
+					<span style="margin-left: 10px; font-size: 14px;"><strong>安吉摄像</strong></span>
 					<span style="margin-left: 20px;color: #ffffff;">详情>></span>
 					<span class="qy_gb" id="videoCancle"></span>
 				</ul>

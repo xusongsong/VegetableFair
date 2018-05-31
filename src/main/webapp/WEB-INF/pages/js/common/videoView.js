@@ -35,7 +35,6 @@ function cancelPreviewVideo(){
 	$("#lockPlayFrame").css("display","none");
 }
 
-
 /**
  * 播放视频资源(以弹窗显示)
  * @param count(窗口数)
@@ -54,8 +53,7 @@ function previewPopVideo(count){
  * @param msg
  */
 function FireOnResponserNotifAll(){
-	function VPSDKCtrl::FireOnResponserNotify(str,id)
-	{	
+	function VPSDKCtrl::FireOnResponserNotify(str,id){
 		//拾取事件
 		if(str == "PickVectorResponser"){
 			//根据获取的别名字符进行判断
@@ -180,8 +178,8 @@ function videoPickEvent(){
 	    var videoImageValueArr = map3D.getLabelValue(vectorPickLayer).imageValue.split(",");
 	    //拼接参数信息
 	    var videoImageUrl = videoResourceUrl + "?indexCode=" + videoImageValueArr[0] + 
-	    "&name=" + videoImageValueArr[1]+ "&pixel=" + videoImageValueArr[2]+ 
-	    "&createTime=" + videoImageValueArr[3]+"&longitude=" + pos[0]+ "&latitude=" + pos[1];
+	    "&name=" + encodeURIComponent(videoImageValueArr[1])+ "&pixel=" + videoImageValueArr[2] + 
+	    "&createTime=" + encodeURIComponent(videoImageValueArr[3])+"&longitude=" + pos[0]+ "&latitude=" + pos[1];
 	    //拾取图片标注生成弹窗
 	    loadVideoDialog(pos,videoImageUrl,videoImageValueArr[0]);
 	    notifyState = "videoPickEvent";
@@ -193,22 +191,22 @@ function videoPickEvent(){
  * @returns
  */
 function integerActive(){
-		//SDK获取页面里面传递出来的参数的方法
-		var msg = webRespSG.GetResponserResult().GetConfigValueByKey("Param");
-		var msgs = msg.split('@#');
-		//获取触发事件的状态值，若触发事件是预览事件，则执行预览方法	
-		if(msgs[0] == "1"){
-			//获取当前的播放的摄像头编号值
-			realIndexCode = msgs[1];
-			//播放弹窗视频
-			previewPopVideo(1);
-			//播放嵌入视频
-			//previewImplantVideo();
-			//关闭页面弹窗
-			cancelVideoWegdit();
-		}else if(msgs[0] == "0"){
-			cancelVideoWegdit();
-		}
+	//SDK获取页面里面传递出来的参数的方法
+	var msg = webRespSG.GetResponserResult().GetConfigValueByKey("Param");
+	var msgs = msg.split('@#');
+	//获取触发事件的状态值，若触发事件是预览事件，则执行预览方法
+	if(msgs[0] == "1"){
+		//获取当前的播放的摄像头编号值
+		realIndexCode = msgs[1];
+		//播放弹窗视频
+		previewPopVideo(1);
+		//播放嵌入视频
+		//previewImplantVideo();
+		//关闭页面弹窗
+		cancelVideoWegdit();
+	}else if(msgs[0] == "0"){
+		cancelVideoWegdit();
+	}
 }
 
 /**
@@ -506,7 +504,7 @@ function loadSGByReady(){
 	//查询所有抓拍机列表(根据预警信息值反查抓拍机经纬)
 	//getPosePicture(1);
 	//初始化默认展开资源列表
-	//showVideoListReady();
+	showVideoListReady();
 	//初始化开启拾取事件(拾取事件的开启需要建立在图层创建的前提下,勿将方法置反)
 	videoPickUp();
 	//初始化加载模型
@@ -514,7 +512,7 @@ function loadSGByReady(){
 	//初始化获取所有菜博会监控点位坐标数组
 	//getVideoPosition();
 	//初始加载一次运用IE缓存机制再次获取秘钥时不会发生卡顿(会延迟5-6秒时间初始化时)
-	//getVideoParam();
+	getVideoParam();
 	//初始化加载全部标注点
 	getLabelList(1);
 }

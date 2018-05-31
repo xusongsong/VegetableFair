@@ -841,7 +841,6 @@ function labelPickEvent(){
     //拼接属性弹窗参数路径
     var labelAttributeParamUrl = labelAttributeUrl + "?name=" + encodeURIComponent(textValue[0]) + "&x=" + textValue[1] + "&y=" + textValue[2];
     var id = textValue[3];
-    console.log(labelAttributeParamUrl);
     //创建属性弹窗
     createLabelAttributeDialog(pos,id,labelAttributeParamUrl);
     //绑定拾取事件

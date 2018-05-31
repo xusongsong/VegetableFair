@@ -442,7 +442,6 @@ function HideWebDialog() {
 function saveWebDialog(flage) {
 	if(flage){
 		function VPSDKCtrl::FireOnToolsNotify(str,id){
-			alert(2);
 			var msg = webobject.GetToolsResult().GetConfigValueByKey("Param");
 			var msgs = msg.split("@#");
 			if (msgs[0] == "1") {// 保存

@@ -2781,10 +2781,11 @@
 	scrolling="no" id="vehicleListFrame"
 	src="../vehicle/device/vehicle.do" height="228px" width="1565px;"></iframe>
 	<!-- 视频嵌入播放-->
-	<iframe name ="lockPlayFrame" frameborder="0" 
-		style="position: absolute; top: 120px; right: 0px; z-index: 101; display: none;"
+	<iframe name ="lockPlayFrame" frameborder="0" style="position: absolute; 
+		top: 120px; right: 0px; z-index: 101; display: none;"
 		scrolling="no" id="lockPlayFrame"
-		src="" height="500px;" width="600px;"></iframe>
+		src="" height="500px;" width="600px;">
+	</iframe>
 	<!-- 视频弹出播放-->
 	<iframe width=0 height=0 id="previewPopVideo"></iframe>
     <!--属性查询弹窗-->

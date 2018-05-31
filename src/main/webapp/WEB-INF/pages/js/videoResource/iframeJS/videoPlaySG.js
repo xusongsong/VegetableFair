@@ -19,14 +19,14 @@ $(document).ready(function(){
 function delayInit(){
  setTimeout(function () {
 	 videoInit();
-    }, 500);
+    }, 500);//这里设置延迟是为了正确加载OCX(取决于电脑性能,具体数值请根据实际情况设定,通常不需要修改 直接调用init()是可行的
     setTimeout(function () {
         $('#PlayViewOCX').css({
             'width': '100%',
             'height': '100%'
         });
         $('.pop').hide();
-    }, 4000);
+    }, 4000);//这里设置延迟(数值请根据实际情况来)是防止快速刷新页面导致进程残留  具体清楚进程方式请参考<关闭进程 云台控制>demo中的代码
 }
 
 /**
