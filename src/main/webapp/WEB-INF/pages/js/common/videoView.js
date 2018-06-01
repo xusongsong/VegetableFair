@@ -45,7 +45,6 @@ function previewPopVideo(count){
      document.getElementById("previewPopVideo").src = param;
 }
 
-
 /**-----------------------------------响应事件汇总----------------------------------------**
 
 /**

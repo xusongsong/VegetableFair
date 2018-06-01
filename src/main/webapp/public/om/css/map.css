@@ -1357,6 +1357,14 @@ td{background-color:#0d3457; height:26px;color:#fff;}
 	margin-top: 25px;
 	height: 185px;
 }
+.bzxg_menu_sd{
+	width: 100%;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+	background: #f4f4f4;
+	margin-top: 25px;
+	height: 185px;
+}
 .bzxg_menu_mc{
 	width: 262px;
 	margin: auto;

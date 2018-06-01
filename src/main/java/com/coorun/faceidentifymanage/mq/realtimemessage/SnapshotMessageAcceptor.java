@@ -49,7 +49,6 @@ public class SnapshotMessageAcceptor {
             map.put("artemis.appKey", hikDatasource.getAppKey());
             map.put("artemis.appSecret", hikDatasource.getAppSecret());
             LOG.debug("连接kafka参数: " + map);
-
             this.defaultCaller = new DefaultCaller(map, new SnapshotPushCallback());
     }
 }

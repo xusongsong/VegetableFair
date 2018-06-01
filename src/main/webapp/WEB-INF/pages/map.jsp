@@ -1400,41 +1400,6 @@
 				</div>
 				<div class="sdsc_lb">
 				
-					<!-- <ul class="map_dttc_qxsy">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj" id="sdxg"></span>
-					</ul>
-					<ul class="map_dttc_qxsy" style="margin-top: 30px;">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj"></span>
-					</ul>
-					<ul class="map_dttc_qxsy" style="margin-top: 30px;">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj"></span>
-					</ul>
-					<ul class="map_dttc_qxsy" style="margin-top: 30px;">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj"></span>
-					</ul>
-					<ul class="map_dttc_qxsy" style="margin-top: 30px;">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj"></span>
-					</ul> -->
 				</div>
 			</li>
 			<li class="zh_k">

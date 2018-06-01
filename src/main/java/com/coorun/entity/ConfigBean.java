@@ -54,7 +54,7 @@ public class ConfigBean {
 	/**是否开启实时推送**/
 	private String realPush;
 	
-	public String getRealPush() {
+	public String getRealPush(){
 		return realPush;
 	}
 

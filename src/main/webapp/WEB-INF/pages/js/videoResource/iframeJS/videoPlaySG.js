@@ -17,8 +17,8 @@ $(document).ready(function(){
  * @returns
  */
 function delayInit(){
- setTimeout(function () {
-	 videoInit();
+	setTimeout(function(){
+		//videoInit();
     }, 500);//这里设置延迟是为了正确加载OCX(取决于电脑性能,具体数值请根据实际情况设定,通常不需要修改 直接调用init()是可行的
     setTimeout(function () {
         $('#PlayViewOCX').css({
@@ -26,7 +26,7 @@ function delayInit(){
             'height': '100%'
         });
         $('.pop').hide();
-    }, 4000);//这里设置延迟(数值请根据实际情况来)是防止快速刷新页面导致进程残留  具体清楚进程方式请参考<关闭进程 云台控制>demo中的代码
+    }, 100);//这里设置延迟(数值请根据实际情况来)是防止快速刷新页面导致进程残留  具体清楚进程方式请参考<关闭进程 云台控制>demo中的代码
 }
 
 /**
@@ -49,6 +49,7 @@ function videoPlay() {
 	//调用父层级方法获取参数集
    	var videoParam = parent.getVideoParam();
    	if(videoParam == null){
+   		alert("父层方法调用错误");
    		return;
    	}
    	//拼接参数信息
@@ -73,7 +74,6 @@ function previewPopVideo(){
 function closeVideo() {
     var param = 'hikvideoclient://VersionTag:artemis;Exit:1;';
     play_ocx_do(param);
-
 };
 
 /**
@@ -85,8 +85,7 @@ function play_ocx_do(param) {
     if ("null" == param || "" == param || null == param || "undefined" == typeof param) {
         return;
     } else {
-        var OCXobj = document.getElementById("PlayViewOCX");
-        //调用底层OCX方法播放视频
+    	var OCXobj = document.getElementById("PlayViewOCX");
         OCXobj.ContainOCX_Do(param);
     }
 }

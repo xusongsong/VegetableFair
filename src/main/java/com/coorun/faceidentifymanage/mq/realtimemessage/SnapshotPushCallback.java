@@ -34,7 +34,6 @@ public class SnapshotPushCallback implements Message {
     @Override
     public void receiveRealMessage(String message) {
         logger.debug("获取抓拍数据: " + message.substring(0, 100));
-
         executor.execute(new MessagePush(message));
     }
 
