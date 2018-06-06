@@ -19,14 +19,23 @@ var patrolInfo = [];
 //巡更图层组
 var patrolAddLayers = [];
 //播放速度
-var patrolSpeed = 25;
-//是否需要添加播放图层
-//var patrolAddFlage = true;
+var patrolSpeed = 15;
 //提示语
 var patrolTip = "请输入绘制路径名称";
 //当前播放的按钮ID
 var playVideoId = null;
-
+//存储路径播放机关键点坐标
+var PositionArray = [];
+//关键点坐标转换成场景大坐标
+var KeyPositionArray = [];
+//关键点求交点过程中，一个关键点只求交一次
+var keyPatrolReadyArr = [];
+//视频资源监控点关键点坐标
+var videoPatrolArr = [];
+//视频巡更播放视频indexCode集(用于判断当前indexCode值是否播放过)
+var videoPreviewPatrols = [];
+//视频巡更播放时请求接口只调用一次(防止请求时间过长，影响请求效率)
+var videoPatrolPraram = {};
 /**
  * 查询视频巡更列表
  * @param pageNumber (分页数)
@@ -35,8 +44,8 @@ var playVideoId = null;
 function findPatroList(pageNumber){
 	//获取输入框搜索(若为空默认为查询所有)
 	var patrolsearchName = $("#patrolInputText").val();
-	// 清除所有标记
-    $('.jz_ssjg4').children('.ss_index_menu_bh1').removeClass('ss_index_menu_bh1click');
+	//重新获取请求视频参数(分页请求)
+	//videoPatrolPraram = getVideoParam();
 	$.ajax({
 		url:"../mapTools/findPath.do",
 		type:"post",
@@ -62,28 +71,12 @@ function findPatroList(pageNumber){
 				patrolList += createPageList(pageNumber,0);
 				$('#gl_menu_ljgl').html(patrolList);
 			}
-			//addPatrolEvent();//视频巡更事件添加
 		},
 		error:function(e){
 			
 		}
 	});
 }
-
-/**
- * 视频巡更事件添加
- * @returns
- */
-function addPatrolEvent(){
-	//鼠标悬浮颜色变化
-	$('.jz_ssjg4').mouseenter(function(){
-		$(this).children('.ss_index_menu_bh1').toggleClass('ss_index_menu_bh1click');
-	});
-	$('.jz_ssjg4').mouseleave(function(){
-		$(this).children('.ss_index_menu_bh1').toggleClass('ss_index_menu_bh1click');
-	});
-}
-
 
 /**
  * 绘制视频巡更路径
@@ -219,10 +212,6 @@ function patrolOpeart(videoId){
 	//获取当前点击的操作类型
 	var type = videoId.split('_')[0];
 	var id = videoId.split('_')[1];
-	// 清除所有标记
-    $('.jz_ssjg4').children('.ss_index_menu_bh1').removeClass('ss_index_menu_bh1click');
-    // 特定标记
-    $('#toggle_'+id).children('.ss_index_menu_bh1').addClass('ss_index_menu_bh1click');
 	switch(type){
 		case "play" :
 			//点击播放停止其他所有的视频巡更(实现单路径一起播放)
@@ -231,12 +220,20 @@ function patrolOpeart(videoId){
 					//获取所有巡更列表
 					var readyId = patrolInfo[i].id;
 					//判断是否已开启播放若是则
-					if($("#play_"+readyId).val() == '1'){
+					if($("#play_"+readyId).val() == '1' && readyId != id ){
 						//停止当前播放的巡更
 						stopPatrol(readyId);
 						// 播放按钮样式 - 关
 						$("#play_" + readyId).css("background", "url(../img/bf.png)");
 						$("#play_" + readyId).val(0);
+					}
+					//判断是否已开启暂停若是则
+					if($("#paush_"+readyId).val() == '1' && readyId != id ){
+						//停止当前暂停的巡更
+						stopPatrol(readyId);
+						// 暂停按钮样式 - 关
+						$("#paush_" + readyId).css("background", "url(../img/zt.png)");
+						$("#paush_" + readyId).val(0);
 					}
 				}
 			}
@@ -293,10 +290,10 @@ function patrolOpeart(videoId){
 				// 播放按钮样式 - 关
 				$("#play_" + id).css("background", "url(../img/bf.png)");
 				$("#play_" + id).val(0);
-				setTimeout(function(){
+				/*setTimeout(function(){
 					// // 暂停按钮样式 - 关
 					$("#paush_" + id).css("background", "url(../img/zt.png)");
-			     },1000);
+			     },1000);*/
 			}
 			 paushPatrol(id);
 			break;
@@ -322,11 +319,11 @@ function createPatrolList(data){
 		patrolInfo[patrolLevel.id] = patrolLevel;
 		var id = patrolLevel.id;
 		patrolList += '<div class="xianshimenu3">';
-		patrolList += '<div class="jz_ssjg4" id = "toggle_' + id + '";>';
+		patrolList += '<div class="jz_ssjg4">';
 		patrolList += '<span class="ss_index_menu_bh1">' + (i+1) + '</span>';
 		patrolList += '<span class="ljgh_bf">';
 		patrolList += '<span class="ddmc">' + patrolLevel.pathName + '</span>';
-		patrolList += '<span class="sdsc_sc" id = delete_' + id + ' onclick = "patrolOpeart(\'delete_' + id + '\')";></span>';
+		patrolList += '<span class="xg_sdsc_sc" id = delete_' + id + ' onclick = "patrolOpeart(\'delete_' + id + '\')";></span>';
 		patrolList += '<span class="tz" value = "0" id = stop_' + id + ' onclick = "patrolOpeart(\'stop_' + id + '\')"; ></span>';
 		patrolList += '<span class="zt" value = "0" id = paush_'+ id +' onclick = "patrolOpeart(\'paush_' + id+ '\')";></span>';
 		patrolList += '<span class="bf" value = "0" id = play_' + id + ' onclick = "patrolOpeart(\'play_' + id + '\')";></span>';
@@ -418,25 +415,25 @@ function playPatrol(id){
 	}
 	//若初次播放未创建图层则
 	if(patrolAddLayers[id] == undefined){
-		//
-		var patrolAddLayer = map3D.addRoamPath(lnglats,str,patrolSpeed);//关键点坐标， 距离，路径巡更速度
+		//var patrolAddLayer=map3D.createDynamicPath({modelUrl :"",viewObject : "0.0,-0.408,50",coordStr : lnglats});
+		var patrolAddLayer = map3D.addRoamPath(lnglats,str,patrolSpeed);//关键点坐标， 视角距离，路径巡更速度
 		patrolAddLayers[id] = patrolAddLayer;
 		layermap[patrolAddLayer.GetLayerID()] = patrolAddLayer;//填入图层更新事件总图层组
 		//patrolAddFlage = false;
 	}
 	 map3D.playRoamPath(patrolAddLayers[id]);//路径播放
-	 var PositionArray = [];//存储路径播放机关键点坐标
-     var KeyPositionArray = [];//关键点坐标转换成场景大坐标
-     PositionArray = lnglats.split(';');
+	 PositionArray = [];//存储路径播放机关键点坐标
+     KeyPositionArray = [];//关键点坐标转换成场景大坐标
+     PositionArray = lnglats.substr(0, lnglats.length - 1).split(';')
      /**  关键点转换为大场景坐标 */
-     for(var i = 0 ; i < PositionArray.length - 1 ; ++i){
+     for(var i = 0 ; i < PositionArray.length ; ++i){
        var keyPoint = PositionArray[i].split(',');
        var scenPoint = map3D.coordTransformation(1,{Lon:keyPoint[0],Lat:keyPoint[1],Height:keyPoint[2]});//坐标转换
        KeyPositionArray.push(scenPoint);
      }
      playVideoId = id;
      //该响应事件绑定巡更过程中的触发事件
-     
+     notifyLayerState = 'playPatrol';
 }
 
 /**
@@ -447,6 +444,11 @@ function stopPatrol(id){
 	//若已播放则
 	if(patrolAddLayers[id] != undefined){
 		map3D.stopRoamPath(patrolAddLayers[id]);
+		 //重置求交数组
+	     keyPatrolReadyArr = [];
+	     //重置视频播放数组
+	     videoPreviewPatrols = [];
+	     notifyLayerState = null;
 	}
 }
 
@@ -464,39 +466,49 @@ function paushPatrol(id){
 		//设置当前巡更图层隐藏
 		patrolAddLayers[id].SetVisible(false);
 	}
+	 notifyLayerState = null;
 }
 
 /**
- * 巡更路线触发事件(此调用事件形式为多进程特有)
- * @param flag 
- * @param id
- *//*
-function videoPatrolEvent(flag){
-    if (flag){
-    	 function VPSDKCtrl::FireOnLayerNotify(layerid,type){
-    		var patrolAddLayer = patrolAddLayers[playVideoId];
-    		var opt = patrolAddLayer.GetLayerResult();//获取图层结果集
-    		//判断结果对象是否为路径巡更对象
-    		 if((opt.GetConfigValueByKey("DataSourceTypeName") == "dynamicpath") &&(type == 2)){
- 		        var val = opt.GetConfigValueByKey("RealTimePosition");//获取实时位置
- 		        //循环遍历关键节点信息数组
- 		        for(var i = 0; i < PositionArray.length; i++){
- 		        	//判断当前所经过的节点是否与关键节点相交
- 		        	if(map3D.CalcBuffer(val,KeyPositionArray[i]) && i < PositionArray.length){
- 	 					//若到了最后一个节点则
- 		        		if(i >= PositionArray.length - 1){
- 	 						alert(PositionArray[i-1]);//获取的是最后一个点的坐标值
- 	 						alert("最后转角点"+(i-1));
- 	 						// 路径播放样式改变
- 	 						$("#play_" + playVideoId).css("background", "url(../img/bf.png)");
- 	 						$("#play_" + playVideoId).val(0);
- 	 					}else{
- 	 						alert(PositionArray[i-1]);//获取的是除最后一个点的其他坐标
- 	 						alert("转角点"+(i-1));
- 	 					}
- 	 				}
- 		        }
-    		 }
-    	}
+ * 获取所有视频监控关键点坐标
+ * @returns
+ */
+function getVideoPosition(){
+	//单取菜博会监控点编号(单选匹配菜博会摄像头)
+	var vegetableIndexCode = "37078330002160274659";
+	var sixVideoLevel = videoKeyLevel[6];//获取第六层级坐标点坐标
+	for(var i = 0; i < sixVideoLevel.length; i++){
+		var str = '';
+		//若不存在经纬度坐标则进行下一个数值循环
+		if(sixVideoLevel[i].longitude == null || sixVideoLevel[i].longitude == '' 
+			|| sixVideoLevel[i].latitude == null || sixVideoLevel[i].latitude == ''){
+			continue;
+		}
+		//筛选菜博会摄像头:注释则显示全部
+		if(sixVideoLevel[i].parentIndexCode == vegetableIndexCode ){
+			str += sixVideoLevel[i].longitude + "," + sixVideoLevel[i].latitude + "," + videoHeight + "," + sixVideoLevel[i].indexCode + "," + sixVideoLevel[i].name;
+			videoPatrolArr.push(str);
+		}
+	}
+}
+
+/**
+ * 检验实时点与平面点是否相交(因实时监控点缺乏高度，所以现锁定为俩个坐标的差乘积)
+ */
+function checkPosiSG(currentPosi,targetPosi){
+	//调整范围距离
+    var buffer = 30;
+    var mPos = currentPosi.split(',');
+    var positions = targetPosi.split(',');
+    //将经纬度坐标转化为场景坐标
+    var mPosScreen = map3D.coordTransformation(1,{Lon:mPos[0],Lat:mPos[1],Height:mPos[2]});
+    var positionsScreen = map3D.coordTransformation(1,{Lon:positions[0],Lat:positions[1],Height:positions[2]});
+    //因摄像头坐标固定均为70，所以隐藏Z坐标比值关系(自定义为0)
+    var dis = (mPosScreen.split(',')[0] * 1 - positionsScreen.split(',')[0] * 1) * (mPosScreen.split(',')[0] * 1 - positionsScreen.split(',')[0] * 1)
+    + (mPosScreen.split(',')[1] * 1 - positionsScreen.split(',')[1]) * (mPosScreen.split(',')[1] * 1 - positionsScreen.split(',')[1]);
+    //console.log(dis);
+    if(dis < buffer * buffer){
+        return true;
     }
-}*/
+    return false;
+}

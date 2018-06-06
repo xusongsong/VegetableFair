@@ -69,11 +69,11 @@
     <ul class="login_k" >
         <li class="login_k_menu">
             <span><img src="${ctx }img/img_index/admin.png"></span>
-            <input type="text"  placeholder="admin" id="user">
+            <input type="text"  placeholder="admin" value="admin" id="user">
         </li>
         <li class="login_k_menu">
             <span><img src="${ctx }img/img_index/password.png"></span>
-            <input type="password" placeholder="密码" maxlength="11" id="passwd" onkeydown="keyDownLogin()">
+            <input type="password" placeholder="密码" maxlength="11" value="admin"  id="passwd" onkeydown="keyDownLogin()">
         </li>
         <li class="remember_password">
             <span><input type="checkbox" id="remberMe"></span>

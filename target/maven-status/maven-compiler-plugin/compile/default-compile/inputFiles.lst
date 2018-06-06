@@ -1,215 +1,222 @@
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\CameraServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\client\SecurityClient.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\service\impl\PopulationStatisticsServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\SecurityManageService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\DataCaptureServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\controller\LoginController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\client\GeodoClient_bak.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\web\MapToolsController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\exception\ApplicationException.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\util\ResultUtil.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\Layer.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\HealthSum.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\CarInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\DefenceController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\vehicle\track\service\IVehicleTrackService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\BlackListEntity.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\ValidateUtils.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\services\IBaseService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\vehicle\device\service\IVehicleDeviceService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\GeodoToken.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\ArtemisService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\aop\impl\ControllerIcgisAdviceHandler.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\util\StringUtils.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\request\PopulationPersonRequest.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\validator\Validator.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\login\service\impl\GeodoLoginServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\HumanSearchServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsPoliticalVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\PushListener.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\StaticListEntity.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\climb\service\ISecurityClimbService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\validator\annotation\ValidateParam.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\HumanSearchService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\climb\controller\SecurityClimbController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\BlackListController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\HealthStatisticsInfoResponse.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsAgeTotalVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\wifi\service\impl\SecurityWifiServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\impl\PlanServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\interceptor\CommonInterceptor.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\WifiInfoRecord.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\MyX509TrustManager.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\impl\ArtemisServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\bean\vo\Children.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\DefenceService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\access\controller\SecurityAccessController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\DefenceServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\CommunityUnitPeopleInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\inquire\controller\PopulationInquireController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsMaritalTotalVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\factory\AuthorizationFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\LiveDataServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\alarmessage\AlarmMessageAcceptor.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\MaritalSum.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\vehicle\device\controller\VehicleDeviceController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\access\service\impl\SecurityAccessServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\factory\LoginFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\TrafficFlowInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\video\service\ISecurityVideoService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\exception\ValidateException.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\CameraController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\SceneManagerService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\MixedResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsPoliticalTotalVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\services\impl\BaseServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\health\controller\PopulationHealthController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\access\service\ISecurityAccessService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\CameraEntity.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\Menu.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\StaticListController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\inquire\service\impl\PopulationInquireServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\RealTimeDataService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\Coverage.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsHealthTotalVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\wifi\controller\SecurityWifiController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\Children.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\factory\SecurityManageFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\ArtemisTreeNode.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\EducationSum.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\ConfigBean.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\factory\MapFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\health\model\LineChatResponse.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\util\Pager.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\util\PageTag.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\web\MapSearcherController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\services\ILoginServices.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\factory\ArtemisFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\dataSource\MultipleDataSource.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\PathResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\ClimbInfoRecord.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\factory\SceneManagerFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\util\MethodFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\LayerService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\util\RetResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\impl\AuthorizationServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\AbstractService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\VehicleAccessRecordRequest.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\web\ArtemisController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\dataSource\DataSourceType.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\impl\LayerServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\MapResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\factory\PlanFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\client\GeodoClient.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\DataCaptureController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\impl\SecurityManageServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\impl\SceneManagerServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\DataCaptureService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\CommunityTreeInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\PersonHourseInfoResponse.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\health\service\IPopulationHealthService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\util\PageTag.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\health\model\NameDataArray.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsSexTotalVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsHealthVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\climb\service\impl\SecurityClimbServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsEducationTotalVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\AttributeResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\util\RetResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\login\service\IGeodoLoginService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\StaticListService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsEducationVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\aop\IIcgisAspect.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\VideoPathResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\HealthItemInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\PoliticalSum.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\ViewResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\SexSum.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\LayerAttribute.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\AgeSum.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\util\ServerRequest.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\AuthorizationService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\HumanSearchController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\CensusSum.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\impl\MapSearcherServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\PlanService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\VideoInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\factory\BaseFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\VideoInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\CensusItemInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\Geom.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\util\ServerRequest.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\DefenceEntity.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\web\PlanController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\spring\resovler\MethodArgumentResovler.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\NameValuedArrayInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\realtimemessage\SnapshotMessageAcceptor.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\PersonImageInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\CommunityGenraalInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\VehicleTrailInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\bean\ResultCode.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\bean\UserInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\StaticListServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsSexVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\BuildingInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\PersonInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\SnameHourseInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\ClimbRecordRequest.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\HealthDetailInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\factory\LayerFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsAgeVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\util\Pager.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\util\Constants.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\controller\BaseController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\CommunityTreeInfoResponse.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\dao\impl\BaseDaoImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\services\MapSearcherService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\realtimemessage\SnaphostPushCallback.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\HttpUtil.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\login\controller\GeodoLoginController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\vehicle\device\service\impl\VehicleDeviceServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsMaritalVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\factory\BaseFactory.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\listener\SystemListener.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\video\controller\SecurityVideoController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\service\IPopulationStatisticsService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\VehicleAccessRecord.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\AppKeyResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsCensusVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\health\service\impl\PopulationHealthServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\BaseController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\aop\impl\ControllerIcgisAspectImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\PeopleHourseInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\ArtemisByNode.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\NameValuedSingleInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\wifi\service\ISecurityWifiService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\BlackListServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\aop\SysLog.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\FamilyPeopleInfo.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\ObjectUtil.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\LabelResult.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\ListLibService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\BlackListService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\CameraService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\vehicle\track\controller\VehicleTrackController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\dao\IBaseDao.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\client\VehicleClient.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\SnameHourseInfoResponse.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\AlarmMQEntity.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\PersonInfoResponse.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\ListLibServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\dataSource\DataSourceContextHolder.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\controller\PopulationStatisticsController.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\security\video\service\impl\SecurityVideoServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\HealthItemInfoResponse.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\inquire\service\IPopulationInquireService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\TopicEntity.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\vehicle\track\service\impl\VehicleTrackServiceImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\entity\PointService.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\JSONUtils.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\alarmessage\AlarmPushCallback.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\DWRScriptSessionManager.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsCensusTotalVO.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\faceidentifymanage\dao\HikDatasource.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\om\base\services\impl\LoginServicesImpl.java
-D:\杞欢瀹夎\缂栫爜宸ュ叿\eclipse neon鐗圽workplace\VegetableFair\src\main\java\com\coorun\web\LayerManagerController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\services\impl\LoginServicesImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\ConfigBean.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\SnameHourseInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\MaritalSum.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\ClimbInfoRecord.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsEducationTotalVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\DataCaptureService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\CameraServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\VideoPathResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\services\impl\BaseServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\BlackListServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\climb\service\ISecurityClimbService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\SecurityManageService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\NameValuedArrayInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\PushListener.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\factory\LayerFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\DataCaptureController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\CarInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\exception\ApplicationException.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\util\StringUtils.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\HumanSearchService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\PeopleHourseInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\aop\SysLog.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\DefenceEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\NameValuedSingleInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\access\service\ISecurityAccessService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\PathResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsCensusTotalVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\PlanService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\HikListResponseEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\ArtemisServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\RealTimeDataService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\CameraController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsPoliticalTotalVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\SceneManagerServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\dataSource\DataSourceContextHolder.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\BlackListEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\BlackListService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\util\ResultUtil.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\web\ArtemisController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\alarmessage\AlarmPushCallback.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\ObjectUtil.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsAgeTotalVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\climb\service\impl\SecurityClimbServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\MapSearcherService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsSexVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\CommunityTreeInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\VideoInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\factory\SceneManagerFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\CameraService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\PersonImageInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsPoliticalVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\dataSource\MultipleDataSource.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\Menu.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\health\service\impl\PopulationHealthServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\vehicle\device\service\IVehicleDeviceService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\client\GeodoClient_bak.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\client\SecurityClient.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\video\controller\SecurityVideoController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\HealthSum.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\WifiInfoRecord.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\ViewResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\VehicleAccessRecord.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsMaritalTotalVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\HumanSearchServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\CensusItemInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\bean\ResultCode.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\util\PageTag.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\GeodoToken.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\realtimemessage\SnapshotPushCallback.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\CommunityTreeInfoResponse.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\exception\ValidateException.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\StaticListServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\spring\resovler\MethodArgumentResovler.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\DefenceController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\validator\Validator.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\util\PageTag.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\HealthItemInfoResponse.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\alarmessage\AlarmMessageAcceptor.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\AlarmPushCallbackEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\PersonInfoResponse.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\SnapshotPushCallbackEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsCensusVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\PlanServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\SceneManagerService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\health\model\LineChatResponse.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\web\LayerManagerController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\controller\PopulationStatisticsController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\VehicleAccessRecordRequest.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\util\RetResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\AlarmHumanBo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\TopicEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\SecurityManageServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\SnameHourseInfoResponse.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\util\RetResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\wifi\controller\SecurityWifiController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\BaseController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\EducationSum.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\ValidateUtils.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\StaticListEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\AlarmMQEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\health\controller\PopulationHealthController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\request\PopulationPersonRequest.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\factory\SecurityManageFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\util\ServerRequest.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\DefenceServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\controller\LoginController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\AttributeResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\MapSearcherServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\DefenceService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\inquire\service\impl\PopulationInquireServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\client\VehicleClient.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\inquire\controller\PopulationInquireController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\vehicle\device\controller\VehicleDeviceController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\PersonInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\HumanSearchController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\vehicle\track\controller\VehicleTrackController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\services\IBaseService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsHealthVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\AuthorizationService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\Children.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\PointService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\vehicle\track\service\IVehicleTrackService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\dao\IBaseDao.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\DWRScriptSessionManager.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\web\MapToolsController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\DataCaptureServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\access\service\impl\SecurityAccessServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\factory\AuthorizationFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\client\GeodoClient.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\MixedResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\HIKResponseEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\controller\BaseController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\ArtemisTreeNode.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\JSONUtils.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\MyX509TrustManager.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\services\ILoginServices.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\TrafficFlowInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\AuthorizationServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\factory\BaseFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\util\MethodFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\service\IPopulationStatisticsService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\factory\PlanFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsMaritalVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\aop\IIcgisAspect.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\aop\impl\ControllerIcgisAdviceHandler.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\StaticListController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\health\model\NameDataArray.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\PoliticalSum.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\MapResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\LiveDataServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\LayerService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\factory\MapFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsAgeVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\login\service\impl\GeodoLoginServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\ArtemisByNode.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\util\HttpUtil.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\dao\HikDatasource.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsEducationVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\LayerServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\factory\LoginFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\LayerAttribute.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\BlackListController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\TargetAttrsEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\bean\UserInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\inquire\service\IPopulationInquireService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\ClimbRecordRequest.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\factory\ArtemisFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\mq\realtimemessage\SnapshotMessageAcceptor.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\validator\annotation\ValidateParam.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\CensusSum.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\HealthDetailInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\web\PlanController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\vo\VehicleTrailInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\CameraEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\FaceEntity.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\vehicle\track\service\impl\VehicleTrackServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\dao\impl\BaseDaoImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\PersonHourseInfoResponse.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\LabelResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\Layer.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\video\service\impl\SecurityVideoServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\AbstractService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\util\Pager.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\video\service\ISecurityVideoService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\HealthItemInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsSexTotalVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\CommunityUnitPeopleInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\web\MapSearcherController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\health\service\IPopulationHealthService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\service\impl\PopulationStatisticsServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\access\controller\SecurityAccessController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\aop\impl\ControllerIcgisAspectImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\ListLibServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\ListLibService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\wifi\service\impl\SecurityWifiServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\FamilyPeopleInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\StaticListService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\wifi\service\ISecurityWifiService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\util\Pager.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\response\HealthStatisticsInfoResponse.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\security\api\vo\VideoInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\util\Constants.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\AppKeyResult.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\login\service\IGeodoLoginService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\AgeSum.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\BuildingInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\listener\SystemListener.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsHealthTotalVO.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\vehicle\device\service\impl\VehicleDeviceServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\Coverage.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\Geom.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\login\controller\GeodoLoginController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\climb\controller\SecurityClimbController.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\util\ServerRequest.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\interceptor\CommonInterceptor.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\ArtemisService.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\bean\vo\Children.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geodo\api\bean\CommunityGenraalInfo.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\om\base\factory\BaseFactory.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\SexSum.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\dataSource\DataSourceType.java

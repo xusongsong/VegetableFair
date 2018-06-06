@@ -73,7 +73,7 @@
 		for(var i = 0; i < urlParamArray.length; i++){
 			switch(urlParamArray[i].name){
 			case 'name':
-				name = urlParamArray[i].value;
+				name = decodeURIComponent(urlParamArray[i].value);
 				break;
 			case 'indexCode':
 				indexCode = urlParamArray[i].value;
@@ -88,22 +88,17 @@
 				latitude = urlParamArray[i].value;
 				break;
 			case 'createTime':
-				createTime = urlParamArray[i].value;
+				createTime = decodeURIComponent(urlParamArray[i].value);
 				break;
 			default:
 				break;
 			}
 		}
-		$("#videoName").html("名称：" + name);
-		$("#videoPixel").html("像：" + pixel);
-		$("#videoPoint").html("经纬度：" + longitude+";"+latitude);
-		$("#videoDate").html("时间：" + createTime);
+		$("#videoName").html("名称：" + (name === undefined?'':name));
+		$("#videoPixel").html("像素：" + (pixel === undefined?'':pixel) + "px");
+		$("#videoPoint").html("经纬度：" + (longitude === undefined?'':longitude)+";"+(latitude === undefined?'':latitude));
+		$("#videoDate").html("时间：" + (createTime === undefined?'':createTime));
 		videoIndexCode = indexCode;
-	}
-	
-	function Test(a){
-		imageValue = a;
-		alert("初始化数值");
 	}
 </script>
 </head>
@@ -112,18 +107,18 @@
 		<div class="alltk">
 			<div class="map_ss_tk">
 				<ul class="sdsc_tk_top">
-					<span style="margin-left: 10px; font-size: 14px;"><strong>寿光摄像</strong></span>
+					<span style="margin-left: 10px; font-size: 14px;"><strong>安吉摄像</strong></span>
 					<span style="margin-left: 20px;color: #ffffff;">详情>></span>
 					<span class="qy_gb" id="videoCancle"></span>
 				</ul>
 				<ul class="q_xq">
 					<li class="q_xq_lb">
-						<span style="width: 55%;" id="videoName">名称：高清DS-7216HS</span>
+						<span style="width: 80%;" id="videoName">名称：高清DS-7216HS</span>
 						<span style="width: 45%;" id="videoPixel">像素：20000px</span>
 					</li>
 					<li class="q_xq_lb">
-						<span style="width: 55%;" id="videoPoint">经纬度：122.2588.569844</span>
-						<span style="width: 45%;" id="videoDate">时间：2016年6月</span>
+						<span style="width:80%;" id="videoPoint">经纬度：122.2588.569844</span>
+						<span style="width: 70%;" id="videoDate">时间：2016年6月</span>
 					</li>
 					<li class="q_xq_lb">
 						<span class="yulan" id="preview">预览</span>

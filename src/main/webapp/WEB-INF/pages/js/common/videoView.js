@@ -198,9 +198,9 @@ function integerActive(){
 		//获取当前的播放的摄像头编号值
 		realIndexCode = msgs[1];
 		//播放弹窗视频
-		previewPopVideo(1);
+		//previewPopVideo(1);
 		//播放嵌入视频
-		//previewImplantVideo();
+		previewImplantVideo();
 		//关闭页面弹窗
 		cancelVideoWegdit();
 	}else if(msgs[0] == "0"){
@@ -413,6 +413,7 @@ function videoPatrolEvent(){
 			//若只出现一次则开始播放视频
 			if(count <= 1){
 				realArr.push(indexCode);
+				patrolOpeart("paush_"+playVideoId);
 				//视频巡更播放中弹出第一个点位信息时会发生卡顿,由于访问秘钥接口时间过长(初始化秘钥接口，分页查询时刷新秘钥)
 				/*var videoParam = videoPatrolPraram;
 				videoParam.CamList = realArr;
@@ -422,7 +423,6 @@ function videoPatrolEvent(){
 				previewAllPopVideo(9,realArr);
 	 			count = 0;
 	 			//当遇到监控点位时暂停前行，播放监控点视频
-	 			patrolOpeart("paush_"+playVideoId);
 			}
 		}
 	}

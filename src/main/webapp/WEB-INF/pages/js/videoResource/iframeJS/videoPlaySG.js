@@ -18,7 +18,7 @@ $(document).ready(function(){
  */
 function delayInit(){
 	setTimeout(function(){
-		//videoInit();
+		videoInit();
     }, 500);//这里设置延迟是为了正确加载OCX(取决于电脑性能,具体数值请根据实际情况设定,通常不需要修改 直接调用init()是可行的
     setTimeout(function () {
         $('#PlayViewOCX').css({
@@ -36,7 +36,7 @@ function delayInit(){
 function videoInit() {
     var OCXobj = document.getElementById("PlayViewOCX");
     var txtInit = $("#config").val();
-    OCXobj.ContainOCX_Init(txtInit);
+    //OCXobj.ContainOCX_Init(txtInit);
     //默认播放视频
     videoPlay();
 }
@@ -54,6 +54,7 @@ function videoPlay() {
    	}
    	//拼接参数信息
     var param = 'ReqType:' + videoParam.palyType + ';' + 'SvrIp:' + videoParam.SvrIp + ';'+'WndCount: 1'+';' + 'SvrPort:' + videoParam.SvrPort + ';' + 'Appkey:' + videoParam.artemisAppKey + ';' + 'AppSecret:' + videoParam.appSecret + ';' + 'time:' + videoParam.time + ';' + 'timesecret:' + videoParam.timeSecret + ';' + 'httpsflag:' + videoParam.httpsflag + ';' + 'CamList:' + videoParam.CamList + ';';
+    console.log(param);
     //调用OCX视频处理函数
     play_ocx_do(param);
 };

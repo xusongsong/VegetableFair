@@ -65,7 +65,7 @@ public class SysLog {
 	 * @param request
 	 * @return ip
 	 */
-	public String getLocalIp(HttpServletRequest request) {
+	public String getLocalIp(HttpServletRequest request){
 		String remoteAddr = request.getRemoteAddr();
 		String forwarded = request.getHeader("X-Forwarded-For");
 		String realIp = request.getHeader("X-Real-IP");

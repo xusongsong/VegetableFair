@@ -8,14 +8,15 @@
 var _windowHeight;//全局监听ESC事件参数
 /*--------------------------------------------------全屏功能-----------------------------------------------------------------*/
 function fullScreen() {
+	map3D.fullScreen();//調用SDK方法进行全屏
 	/*获取屏幕坐标*/
-	_windowHeight  = document.body.clientHeight;//获取整个页面body高度
+	/*_windowHeight  = document.body.clientHeight;//获取整个页面body高度
 	var screenHeight  = window.screen.height; //获取屏幕分辨率高
 	var screenWidth  = window.screen.width;	//获取屏幕分辨率宽
-	/*f11监听事件调用*/
+	f11监听事件调用
 	WshShell = new ActiveXObject('WScript.Shell');//调用active插件获取对象
     WshShell.SendKeys('{F11}');//添加F11触发事件
-	/*f11操作整个全屏事件开启*/
+	f11操作整个全屏事件开启
 	$(".OMmap_btm").css("height",screenHeight+"px");//设置地图div为屏幕分辨率高度
 	$(".OMmap_btm").css("width", screenWidth+"px");//设置地图div为屏幕分辨率宽度
 	$(".btm_right").css("left","0px");//设置容器至左边地图工具与地图列表的距离
@@ -27,7 +28,7 @@ function fullScreen() {
 	$(".btm_right_top").css("display","none");//设置地图工具按钮栏隐藏
 	$(".btm_right").css("width",screenWidth+"px");//设置地图容器宽度为屏幕分辨率宽度
 	$(".btm_right").css("height",screenHeight+"px");//设置地图工具长度为屏幕分辨率长度
-	/*是否开启二三维事件*/
+	是否开启二三维事件
 	if(layerSwitchState == "0"){//二三维开启时
 		var _btm_right_width1 = $(".btm_right").width();//全局ESC监听时间参数定义
 		var _btm_right_height1 = $(".btm_right").height();
@@ -41,7 +42,7 @@ function fullScreen() {
 		$("#map3D").css("height",screenHeight+"px");//设置地图展示div高度为全屏
 	}
 	FullScreenState = true;//设置是否为全屏状态
-};
+*/};
 
 /*--------------------------------------------------全幅功能-----------------------------------------------------------------*/
 /*全幅功能*/
@@ -58,8 +59,7 @@ function fullWidth(){
 	if (roamModeState == 0) {
 		roamMode("clearRoamMode");
 	}
-	 map3D.flyPosition(119.5000907,29.5132123,275000,
-	         0,-0.46*3.14,3,3);//飞行定位	
+	 map3D.flyPosition(118.812523746,36.8559383142,48.5421490474,0.03147185505625231,-0.7828845853951358,445.1140993320444,3);//飞行定位	
 
 }
 
@@ -201,21 +201,6 @@ function measureFireOnLayerNotify(layerid , type) {//拾取响应器触发
 
 /*获取测量结果*/	
 function getMeasure(layerid,type){
-	/*var opt = horizontalLayer.GetLayerResult();		//获取图层结果
-	//判断当前图层数据源类型
-	if(opt.GetConfigValueByKey("DataSourceTypeName") == "as_horizontal")
-	{
-		var points = opt.GetConfigValueByKey("ClickPoints"); //获取点击点坐标
-		var strs = new Array();//定义一数组
-		strs = points.split(';');//获取距离测量返回数组
-		var startStrs = strs[0].split(',');
-		var endStrs = strs[strs.length-2].split(',');
-		var startScreenXY = map3D.coordTransformation(4,{lon:startStrs[0],lat:startStrs[1],height:startStrs[2]});
-		//endScreenXY =  map3D.coordTransformation(4,{lon:endStrs[0],lat:endStrs[1],height:endStrs[2]});
-		alert(startScreenXY);
-		var HorizontalResult = opt.GetConfigValueByKey("HorizontalResult").split(';')[0]; //获取测量结果
-		//alert("HorizontalResult:" + HorizontalResult);
-	}*/
 	var result = new Array();
 	result = map3D.GetHorizontalMeasure(horizontalLayer);
 	var strs = new Array();//定义一数组
@@ -228,8 +213,6 @@ function getMeasure(layerid,type){
 	document.getElementById("measureReminder").style.display = "block";
 	var top = $("#measureReminder").css("top");
 	var left = $("#measureReminder").css("left");
-	//alert(top);
-	//alert(left);
 }
 
 /*清除测量方法*/
@@ -305,8 +288,13 @@ function startHeightControl(){
 
 /*开启视域分析*/
 function startView(){
-	var VAngle=60;
-	var HAngle=60;
+	var VAngle = $("#horizontalView").val();//水平视角
+	var HAngle = $("#verticalView").val();//垂直视角
+	if(VAngle == ''){
+		VAngle = "60";
+	}if(HAngle == ''){
+		HAngle = "60";
+	}
 	view = map3D.sightAnalysis(VAngle, HAngle);
 	views.push(view);
 	layermap[view.GetLayerID()] = view;
@@ -528,7 +516,8 @@ function printScreen(){
 			window, par);
 }
 
-/*--------------------------------------------------标注管理功能-----------------------------------------------------------------*/
+/**20180525-shine**/
+/*--------------------------------------------------标注管理功能-----------------------------------------------------------------
 var labelLayer;//候选标注图片图层
 var labelLayers = [];//候选标注图片图层样式组
 var labelName;//弹窗标注名称
@@ -546,9 +535,9 @@ var labelBouncedUrl = "http://" + projectIP + ":" + projectPort//弹出框页面
 var imageBouncedUrl = "http://" + projectIP + ":" + projectPort //标注图片路径
 		+ "/VegetableFair/img/mapdw.png"
 
-/*---------------------------------------------------标注增删改查ajax请求方法------------------------------------------------------*/
+---------------------------------------------------标注增删改查ajax请求方法------------------------------------------------------
 		
-/* 标注查询 */
+ 标注查询 
 function findLabelPoint(pagenumber) {
 	var labeltName = document.getElementById("LabeltName").value;// 值为空则查询所有结果
 	var pageSize = 7;//设置页码参数值
@@ -563,11 +552,11 @@ function findLabelPoint(pagenumber) {
 		success : function(data) {
 			var labelResultList = '';//定义labelResultList页面挂载
 			if (data.success == 1) {
-				/*获得返回值*/
+				获得返回值
 				var records = data.record.records;//获取返回值集合
 				var totalRecords = data.record.totalRecords;//获取返回值总条目数字段
 				var totalPage = data.record.totalPage;//页数(取整)
-				/*labelResultList +='<div style="position:relative;height:450px;width:280px;overflow-y:auto;overflow-x:hidden;">'*/
+				labelResultList +='<div style="position:relative;height:450px;width:280px;overflow-y:auto;overflow-x:hidden;">'
 				for (var i = 0; i < records.length; i++) {
 					var record = records[i];
 					var id = record.id;// id
@@ -596,7 +585,7 @@ function findLabelPoint(pagenumber) {
 					+ ');"></span>';//绑定修改标注事件
 					labelResultList += '</ul>';
 				}
-				/*labelResultList +='</div>';*/
+				labelResultList +='</div>';
 				labelResultList += createLabelPageList(pagenumber, totalPage);//对页面挂载进行分页挂载
 			}else{
 				//若查询的结果为空则
@@ -612,9 +601,9 @@ function findLabelPoint(pagenumber) {
 	});
 }
 
-/*标注删除*/
+标注删除
 function delLabelPoint(id){
-	/*点击标注删除时 标注图标变红*/
+	点击标注删除时 标注图标变红
 	$('.map_dttc_qxsy').children('.map_dttc_qxsy_xh').removeClass('map_dttc_qxsy_xhclick');// 清除所有标记
 	$('#' + id).children('.map_dttc_qxsy_xh').addClass('map_dttc_qxsy_xhclick');// 特定标记
 	if(confirm("确定删除此标注?")){
@@ -642,7 +631,7 @@ function delLabelPoint(id){
 	}
 }
 
-/*标注修改*/
+标注修改
 function updateLabelPoint(updateLabelName,labelRemark,id){
 	$.ajax({
 		url : '../mapTools/updateLabel.do',
@@ -672,7 +661,7 @@ function updateLabelPoint(updateLabelName,labelRemark,id){
 	});
 }
 
-/*标注添加*/
+标注添加
 function addLabelPoint(wegditLabelName, wegditLabelMemo){
 	$.ajax({
 		url : '../mapTools/addLabel.do',
@@ -702,9 +691,9 @@ function addLabelPoint(wegditLabelName, wegditLabelMemo){
 	});
 }
 
-/*--------------------------------------------------标注添加功能相关方法-----------------------------------------------------------------*/
+--------------------------------------------------标注添加功能相关方法-----------------------------------------------------------------
 //方法：当标注列表查询出来时，单击页面定位图标实现飞行定位
-/*标注定位 飞行定位时图标变红样式变换*/
+标注定位 飞行定位时图标变红样式变换
 function flyLabelPoint(lon, lat, height, Azimuth, Pitch, range, id) {
 	$('.map_dttc_qxsy').children('.map_dttc_qxsy_xh').removeClass('map_dttc_qxsy_xhclick');// 清除所有标记
 	var time = 3;// 延迟时间
@@ -725,19 +714,19 @@ function flyLabelPoint(lon, lat, height, Azimuth, Pitch, range, id) {
 		Lon:lon,
 		Lat:lat,
 		Height:height});//获取动态图片
-	/*控制标注弹框出现的时间*/
+	控制标注弹框出现的时间
 	map3D.flyPosition(lon, lat, height, Azimuth, Pitch, range, time);// 飞行定位
 	$('#' + id).children('.map_dttc_qxsy_xh').addClass('map_dttc_qxsy_xhclick');// 特定标记
 	$('.bzxg_menu').hide();//修改栏弹窗隐藏
 	clickState = 1;
 }
 
-/**
+*//**
  * 分页路径列表创建
  * @param pageNo (分页数)
  * @param totalPage (总页数)
  * @returns pageList (分页结果集列表)
- */
+ *//*
 function createLabelPageList(pageNo,totalPage){
 	var currPage = pageNo;
 	var totalPage = totalPage;
@@ -787,7 +776,7 @@ function createLabelPageList(pageNo,totalPage){
 
 
 //对标注列表进行分页展示处理
-/*分页查询事件*/
+分页查询事件
 function LabelPager(pageNo, totalPage) {
 	// 若超出限制则只显示前25*9---200条记录
 	if (totalPage > 25) {
@@ -833,8 +822,8 @@ function LabelPager(pageNo, totalPage) {
 	return resultList;
 }
 
-/*--------------------------------------------------标注修改功能相关方法-----------------------------------------------------------------*/
-/*开启标注弹窗*/
+--------------------------------------------------标注修改功能相关方法-----------------------------------------------------------------
+开启标注弹窗
 function startUpdateLabel(id,memo,x,y,z,rotateAngle,overAngle,range){
 	$('.map_dttc_qxsy').children('.map_dttc_qxsy_xh').removeClass('map_dttc_qxsy_xhclick');// 清除所有标记
 	$('#' + id).children('.map_dttc_qxsy_xh').addClass('map_dttc_qxsy_xhclick');// 特定标记
@@ -842,7 +831,7 @@ function startUpdateLabel(id,memo,x,y,z,rotateAngle,overAngle,range){
 	$('#labelRemark').text(memo);//获取备注信息
 	$('.bzxg_menu').show();//显示标注修改窗
 	
-	/*标注修改窗确定事件*/
+	标注修改窗确定事件
 	$('#bzqd').unbind('click').click(function(){
 		var updateLabelName = $('#bzxgname').val();
 		var labelRemark = $('#labelRemark').text();
@@ -859,21 +848,21 @@ function startUpdateLabel(id,memo,x,y,z,rotateAngle,overAngle,range){
 		clickState = 1;
 	});
 	
-	/*点击地图事件*/
+	点击地图事件
 	$('.cxqd').unbind('click').click(function(){
 		//SDKevent.attachEvent("FireOnLButtonUp",updateMap);
 		updateMap(true);
 		clickState = 0;
 	});
 	
-	/*标注删除*/
+	标注删除
 	$('#bzsc').unbind('click').click(function(){
 		$('.bzxg_menu').hide();//修改栏弹窗隐藏
 		clickState = 1;
 	});
 }
 
-/*标注修改重新点击地图进行取点事件*/
+标注修改重新点击地图进行取点事件
 function updateMap(flage){
 	function VPSDKCtrl::FireOnResponserNotify(x,y)
 	{
@@ -894,7 +883,7 @@ function updateMap(flage){
 	}
 }
 
-/*-----------------------------------------------------标注新增事件-----------------------------------------------------------*/
+-----------------------------------------------------标注新增事件-----------------------------------------------------------
 //SDK未合版的测试方法
 function startAddLabelTest(){
 	 labelLongitude = '119.5000907';//经度
@@ -951,14 +940,14 @@ function clickMap(flage){
 
 //方法：显示标注图层与页面弹框，与点击地图事件相关联
 function LoadLayer(pos){
-	/*移除图层进行图层更新*/
+	移除图层进行图层更新
 	removeArrayLayers(labelLayers);
-	/*if(labelLayers.length !=0){
+	if(labelLayers.length !=0){
 		for(var i = 0; i <= labelLayers.length; i++ ){
 			map3D.removelayer(labelLayers[i]);
 		}
 		labelLayers = [];
-	}*/
+	}
 	labelLayer = map3D.createImageLabelLayer({//map3D里面改变定位相机大小状态值
 		liftUp:"4",
 		iconUrl:imageBouncedUrl,
@@ -976,16 +965,16 @@ function LoadLayer(pos){
 				Lat:pos[1],
 				Height:pos[2],
 				ename:''});//获取动态图片
-	/*控制标注弹框出现的时间*/
+	控制标注弹框出现的时间
 	setTimeout(function(){
     	showLabelWegdit(pos);	
      },300); 
 }
 
-/*-----------------------------------------------------标注弹窗相应方法事件(SDK提供方法)-------------------------------------------*/
+-----------------------------------------------------标注弹窗相应方法事件(SDK提供方法)-------------------------------------------
 
 //备注://由于SDK所提供的方法只能知道里面传递了什么值出来，不能知晓到底执行了哪个按钮，触发了什么事件，所以在外面我们需要自行定义一个状态值进行模拟判断页面里面执行的是哪个方法
-/*保存页面弹框*/
+保存页面弹框
 function saveLabelWegdit(){
 	var msg = webResp.GetResponserResult().GetConfigValueByKey("Param");//SDK获取页面里面传递出来的参数的方法
 	var msgs = msg.split('@#');
@@ -1003,7 +992,7 @@ function saveLabelWegdit(){
 	}
 }
 
-/*取消页面弹框*/
+取消页面弹框
 function canelLabelWegdit(){
 	map.RemoveResponser("TipsDialogResponser");												///< 移除响应器
 	webResp = null;
@@ -1015,7 +1004,7 @@ function canelLabelWegdit(){
 	//content3d.detachEvent('FireOnResponserNotify',saveLabelWegdit);//取消时需要解除绑定保存事件
 }
 
-/*页面弹框显示*/
+页面弹框显示
 var webResp = null;
 function showLabelWegdit(pos) {//传递坐标值与页面跳转路径
 	if (webResp) {
@@ -1050,7 +1039,8 @@ function AB() {
 		pOption.AddConfig("FunctionParam", "20");											///< 函数参数
 		webResp.UpdateResponserOptions(pOption);						///< 创建响应器
 	}
-}
+}*/
+/**20180525-shine**/
 
 
 /**--------------------------------------------------截图子页面调用父页面方法------------------------**/
@@ -1063,5 +1053,3 @@ function imagePrint(){
 		imageName = "" + imageName + ".jpg";
 		map3D.imageCut(imageFilePath, imageName, 4);//调用SDK截图方法
 }
-
-

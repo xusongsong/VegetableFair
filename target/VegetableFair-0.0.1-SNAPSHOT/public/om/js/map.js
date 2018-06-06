@@ -16,16 +16,25 @@ var mapShps = [];// 所有地图上面新增的图层
 var layerSwitchState = 1;//二三维联动状态值
 var planState = 1;//规划状态值
 var notifyState =null;//自定义响应事件数组(由于响应事件多弹窗会互相干扰，所以需要在总事件入口添加自行调配的参数值进行判断)
+var SDKpath;//SDK路径
+var videoArea;//加载投影返回值
 // 初始化地图界面
 function init() {
+	var windowWidth = document.body.clientWidth;
+	var windowHeight = document.body.clientHeight;
+	var mapWidth = windowWidth - 71;
+	var mapHeight = windowHeight - 60 - 30 - 20;//35代表下端高度提示map
 	map3D = new OM.Map3D({
 		id : "map3D", // 加载三维地图容器的id
-		width : "100%",
-		height : "100%"
+		width : mapWidth,
+		height : mapHeight
 	});
 	map3D.getLicence(authorizeIP+"@"+authorizePort+"@");// 网络授权
 	SDKevent = map3D.sdkEvent();// 注册事件
-	
+	var path = map3D.getSDKPath();//获取SDK路径
+    SDKpath = path.substring(0, path.length - 4).replace(/\\/g, "\\\\");
+    //创建投影对象
+    videoArea=map3D.VideoAreaCreate();
 	//获取当前屏幕对象
 	/* 定制sdk
 	var mvCount = map.GetMapViewCount();
@@ -35,37 +44,36 @@ function init() {
 	setPlanCSS();
 	
 	// 影像地形加载
-	//initLayerImgTerLoad();
+	initLayerImgTerLoad();
 	
-	// 模型加载
-	//	getModelList();
-	// 获取模型服务
+	// 初始化登录时绑定当前登录用户拥有的图层名
 	getModelSName();
-	//初始化加载倾斜摄影
-	getOSGBList();
-	showOrhiddenOSGB(477);
-	 //初始化默认展开资源列表
-	//showVideoListReady();
-	//初始化加载多进程响应事件
-	startNotifyEvent();
-	//初始化加载菜博会建筑文字标识图层
-	loadBuildLayer();
-	// 初始化飞行定位杭州
-	setTimeout(function() {
-		map3D.flyPosition(118.812523746,36.8559383142,48.5421490474,0.03147185505625231,-0.7828845853951358,445.1140993320444,3);
+	// 模型加载
+	//getModelList();
+	//现场需求初始化加载的方法集合
+	loadSGByReady();
+	// 初始化飞行定位寿光
+	setTimeout(function() {//飞行定位一号馆
+		map3D.flyPosition(118.813594929,36.8551607931,35.245023394,6.258975262182426,-0.175204931024088,73.62125407066333,3);
 	  	}, 500);
-	
 	/*初始化地图大小和位置*/
-	var windowWidth = document.body.clientWidth;
-	var windowHeight = document.body.clientHeight;
-	var mapWidth = windowWidth - 71;
-	var mapHeight = windowHeight - 60 - 30 - 20;//35代表下端高度提示map
-	$(".btm_right").css("width",mapWidth + "px");//设置容器宽度
+	
+	$(".btm_right").css("width", windowWidth - 71 -281  + "px");//罗盘位置调整
 	$(".btm_right").css("height",mapHeight + "px");//设置容器高度
+	trimReady();//初始化动态调整页面样式
 	//菜博会左上方图标定位(后续待优化)
 	$("#zuobiao").click(function(){
+		//飞到寿光菜博会上方
 		map3D.flyPosition(118.812523746,36.8559383142,48.5421490474,0.03147185505625231,-0.7828845853951358,445.1140993320444,3);
     });
+	//点击地图左侧工具栏时改变地图样式
+	$('.k8,.k10,.k9,.k7,.k4,.k5,.k6').click(function(){
+		 $(".btm_right").css("width", windowWidth - 71 -281 + "px");//罗盘位置调整
+	});
+
+	$('.k8_1,.k10_1,.k9_1,.k7_1,.k4_1,.k5_1,.k6_1').click(function(){
+		 $(".btm_right").css("width", windowWidth - 71  + "px");//罗盘位置调整
+	});
 	/* 监听窗口变化 */
 	  $(window).resize(function() {
 			  newWidth = document.body.clientWidth;
@@ -104,7 +112,7 @@ function init() {
 				  $(".btm_right").css("height", window.screen.height + "px"); //获取全屏宽度
 			  }
 			  $(".btm_left_menu").css("height", mapHeight + "px");
-			  $("#map3D").css("width", mapWidth+ "px");//退出全屏右侧空白bug(地图对象未做自适应)
+			  //$("#map3D").css("width", mapWidth+ "px");//退出全屏右侧空白bug(地图对象未做自适应)
 	 });
 	/* 全局监听Esc事件 */
 	content3d.attachEvent("FireOnKeyUp", function(key) {
@@ -180,13 +188,16 @@ function init() {
 		}
 	})
 	// 添加罗盘事件
-//	map3D.addCompass();
-
+	map3D.addCompass();
 }
-
 $(document)
 		.ready(
 				function() {
+					 $("#zuobiao").click(function(){
+						 	//坐标飞行定位事件(寿光左上方图标飞行定位)
+	                        map3D.flyPosition(118.812523746,36.8559383142,48.5421490474,0.03147185505625231,-0.7828845853951358,445.1140993320444,3);
+	                    });
+
 				    //人口管理点击
 					$(".rkgl_top li").click(function(){
 						$(".rkgl_top li").removeClass("kgfa");
@@ -501,7 +512,9 @@ $(document)
 
 					$('#bjgl').click(function() {
 						$('.btm_left_menu .zh_k').hide().eq(13).show();
-						findLabelPoint(1);//页面加载时模拟执行搜索按键
+						/**20180525-shine**/
+						getLabelList(1);//页面加载时模拟执行搜索按键
+						/**20180525-shine**/
 					});
 
 					$('.bjgl_fh').click(function() {
@@ -827,7 +840,7 @@ function setPlanCSS() {
 			$('.k3_1,.k4_1,.k5_1,.k6_1,.k7_1,.k8_1,.k9,.k10_1').hide();
 			$(".btm_left_menu .zh_k").hide().eq(3).show();
 			//获取设备列表
-			//getVideoFaceList(1);
+			getVideoFaceList(1);
 		});
 		$('.k9_1').click(function(){
 			$('.k9').show();

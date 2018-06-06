@@ -11,7 +11,7 @@
 //视频层级对象数组(用于存储分级列表数组)
 var videoKeyLevel = [];
 //飞行高度(后台接口未返回高度参数值，自行定义高度值)
-var videoHeight = 15;
+var videoHeight = 70;
 //摄像头图片图层(初始加载的摄像头图层)
 var videoImageLayer = null;
 //矢量图层组(矢量图层创建时，用于全部矢量图层的拾取)
@@ -36,6 +36,8 @@ var videoDialogIndexCode = null;
 var realIndexCode = null;
 //判断当前列表是否初次加载
 var videoFlage = true;
+//判断是否开启拾取
+var pickFlage = true;
 //12层建筑模型标识图片图层数组
 var buildLayers = [];
 //12层建筑模型标识图片图层
@@ -56,8 +58,11 @@ var buildPointArray = [{name:'1号馆',x:118.813717937,y:36.8563757715,z:63.3013
 						{name:'12号馆',x:118.814617291,y:36.858863837,z:35.5813969132}];//十二号馆
 var buildBackgroundUrl = "http://" + projectIP + ":" + projectPort
 +"/VegetableFair/img/build1.png";
-
+//建筑图标高程
 var buildHeight = 60;
+/**由于未提供查询人脸视频组织编号接口，以下为业务数据自取**/
+//人脸第四层级组织编号
+var faceFourCode = '37078302';
 /**
  * 获取视频资源列表
  * @param param
@@ -83,7 +88,6 @@ function getVideoList(param){
 		//创建图片要素图层(初始化的时候创建只创建一次)
 		createVideoImageLayer();
 		//开启拾取事件(初始化时值开启一次)
-		videoPickUp();
 		videoFlage = false;
 	}
 }
@@ -343,6 +347,9 @@ function  createVideoFourList(parentIndexCode){
 		var indexCode = level.indexCode;
 		//判断是否为该层级的子层级
 		if(parentIndexCode == level.parentIndexCode){
+			if(indexCode == faceFourCode ){//当挂载人脸识别模块时直接跳过进行下一次循环
+				continue;
+			}
 			videoList += '<div class="zjd1" style="margin-left: 55px;width: 204px;">';
 			videoList += '<div>';
 			videoList += '<span class="tree_xl"></span>';
@@ -656,7 +663,7 @@ function videoShowOrHideSix(indexCode){
 		createMapFeature(level);
 		$("#xy_"+indexCode).val('1');
 	}
-	//控制父层级显影，取得每一上层级父层级indexCode编号
+	//控制父层级显影,取得每一上层级父层级indexCode编号
 	childrenLinkParent(indexCode);
 }
 
@@ -882,6 +889,9 @@ function loadImagLayer(level){
 	var videoImageValue = level.indexCode + "," + level.name + ","  + level.pixel + "," + createTime;
 	//判断当前拾取的是哪个图层(适用于一个场景同时存在多拾取事件)
 	var ename = '1';
+	//测试数据
+	level.longitude = "120.53746909";
+	level.latitude = "31.85751499";
 	//判断当前对象的经纬度是否为空，为空则不创建要素
 	if(level.longitude == '' || level.latitude == ''){
 		 return;
@@ -940,8 +950,9 @@ function cancelVideoWegdit(){
  */
 function videoPickUp(){
 	vectorPickLayer = map3D.labelPick(vectorAllLayer); // 图片拾取
+	pickFlage = false;
 	//开启响应器(SDK多进程事件所有响应事件统一入口)
-	//FireOnResponserNotifAll();
+	FireOnResponserNotifAll();
 }
 
 /**---------------------------------------------------------------------------------------------------------------------------
@@ -995,11 +1006,20 @@ function createMapFeature(level){
  * @returns
  */
 function dateTurn(createTime){
-	var d = new Date(createTime * 1000);    //根据时间戳生成的时间对象
-	var date = (d.getFullYear()) + "年" + (d.getMonth() + 1) + "月" + (d.getDate()) + "日"
-	           //(d.getHours()) + ":" + 
-	           //(d.getMinutes()) 
+	var d = new Date(Number(createTime));    //根据时间戳生成的时间对象
+	var date = dateJudge(d.getFullYear()) + "年" + dateJudge(d.getMonth() + 1) + "月" + dateJudge(d.getDate()) + "日" ;
+			  /* dateJudge(d.getHours()) + ":" + 
+	           dateJudge(d.getMinutes()) ;*/
 	return date;
+}
+
+/**
+ * 判断日期时间是否小于10
+ * @param str
+ * @returns
+ */
+function dateJudge(str){
+	return str < 10 ? '0'+str:str;
 }
 
 /**
@@ -1059,7 +1079,7 @@ function showVideoListReady(){
 		"order":"0"
 	});
 	//默认点击二号展厅
-	videoSearchInfo("二层展厅");
+	//videoSearchInfo("二层展厅");
 }
 
 /**-----------------------------------------------------创建菜博会文字信息----------------------------------**/
@@ -1128,7 +1148,7 @@ function deleteBuildFeature(){
  * @returns
  */
 function loadBuildLayer(){
-	createBuildLayer();
+	//createBuildLayer();
 	addBuildFeature();
 }
 

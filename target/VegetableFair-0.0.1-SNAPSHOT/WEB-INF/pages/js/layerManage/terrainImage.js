@@ -219,7 +219,7 @@ function getAttrByPath(path){
 	var attr = {};
 	for(var i =0;i<terrainImageParam.length; i++){
 		var param = terrainImageParam[i];
-		if(param.path = path){
+		if(param.path == path){
 			attr = param.attr;
 		}
 	}
@@ -243,12 +243,23 @@ function getTerrainOrImageList(type) {
 			var imgResultList = '';
 			//影像列表
 			imgResultList += '<ul class="lsyx_sj_left">';
+			var childIsNull=true;
 			for(var i=0;i<imageList.length;i++){
 				if(imageList[i].child.length == 0){
 					if(imageList[i].year == defaultDOMDateValue){
-						imgResultList += '<span style="margin-top: 67px;color:#2f88e6;" class="lsyx_sj_left_text1" id="' + imageList[i].url + '">' + imageList[i].year + '</span>';
+						if(childIsNull){
+							imgResultList += '<span style="margin-top: 67px;color:#2f88e6;" class="lsyx_sj_left_text1" id="' + imageList[i].url + '">' + imageList[i].name + '</span>';
+							childIsNull = false;
+						}else{
+							imgResultList += '<span style="color:#2f88e6;" class="lsyx_sj_left_text1" id="' + imageList[i].url + '">' + imageList[i].name + '</span>';
+						}
 					}else{
-						imgResultList += '<span style="margin-top: 67px;" class="lsyx_sj_left_text1" id="' + imageList[i].url + '">' + imageList[i].year + '</span>';
+						if(childIsNull){
+							imgResultList += '<span style="margin-top: 67px;" class="lsyx_sj_left_text1" id="' + imageList[i].url + '">' + imageList[i].name + '</span>';
+							childIsNull = false;
+						}else{
+							imgResultList += '<span style="" class="lsyx_sj_left_text1" id="' + imageList[i].url + '">' + imageList[i].name + '</span>';
+						}
 					}
 				}else{
 					imgResultList += '<span style="margin-top: 67px;" class="lsyx_sj_left_text1" id="' + imageList[i].url + '">' + imageList[i].year + '</span>';
@@ -317,12 +328,23 @@ function getTerrainOrImageList(type) {
 			var terrainResultList = '';
 			//地形列表
 			terrainResultList += '<ul class="lsyx_sj_left">';
+			var childIsNull=true;
 			for(var i=0;i<terrainList.length;i++){
 				if(getTerrainList[i].child.length == 0){
 					if(terrainList[i].year == defaultDEMDateValue){
-						terrainResultList += '<span style="margin-top: 67px;color: #2f88e6;" class="lsyx_sj_left_text1" id="' + terrainList[i].url + '">' + terrainList[i].year + '</span>';
+						if(childIsNull){
+							terrainResultList += '<span style="margin-top: 67px;color: #2f88e6;" class="lsyx_sj_left_text1" id="' + terrainList[i].url + '">' + terrainList[i].name + '</span>';
+							childIsNull = false;
+						}else{
+							terrainResultList += '<span style="color: #2f88e6;" class="lsyx_sj_left_text1" id="' + terrainList[i].url + '">' + terrainList[i].name + '</span>';
+						}
 					}else{
-						terrainResultList += '<span style="margin-top: 67px;" class="lsyx_sj_left_text1" id="' + terrainList[i].url + '">' + terrainList[i].year + '</span>';
+						if(childIsNull){
+							terrainResultList += '<span style="margin-top: 67px;" class="lsyx_sj_left_text1" id="' + terrainList[i].url + '">' + terrainList[i].name + '</span>';
+							childIsNull = false;
+						}else{
+							terrainResultList += '<span style="" class="lsyx_sj_left_text1" id="' + terrainList[i].url + '">' + terrainList[i].name + '</span>';
+						}
 					}
 				}else{
 					terrainResultList += '<span style="margin-top: 67px;" class="lsyx_sj_left_text1" id="' + terrainList[i].url + '">' + terrainList[i].year + '</span>';
@@ -347,6 +369,7 @@ function getTerrainOrImageList(type) {
 						terrainResultList += '<span class="sjz_dd_terrain" onclick="setTerImgToggle(this,\'' + "terrain" + '\');" id="' + terrainList[i].url + "#@null" + '" value="' + terrainList[i].year + "#@" + terrainList[i].name + "#@" + terrainList[i].production + "#@" + terrainList[i].area + "#@" + terrainList[i].precision + '"><img src="../img/lsyx_dd.png"><img class="pic1_terrain" src="../img/lsyx_dd1.png"></span><!-- ../img/lsyx_dd.png大项 -->';
 					}
 				}else{
+					terrainResultList += '<span class="sjz_dd_terrain" onclick="setTerImgToggle(this,\'' + "terrain" + '\');" id="' + terrainList[i].url + "#@null" + '" value="' + terrainList[i].year + "#@" + terrainList[i].name + "#@" + terrainList[i].production + "#@" + terrainList[i].area + "#@" + terrainList[i].precision + '"><img src="../img/lsyx_dd.png"><img class="pic1_terrain" src="../img/lsyx_dd1.png"></span><!-- ../img/lsyx_dd.png大项 -->';
 					for(var j=0;j<terrainList[i].child.length;j++){
 						if(terrainList[i].child.month == defaultDEMMonthValue){
 							terrainResultList += '<span class="sjz_dd_terrain" onclick="setTerImgToggle(this,\'' + "terrain" + '\');" id="' + terrainList[i].child[j].url + "#@show" + '" value="' + terrainList[i].year + "#@" + terrainList[i].child[j].month + "#@" + terrainList[i].child[j].name + "#@" + terrainList[i].child[j].production + "#@" + terrainList[i].child[j].area + "#@" + terrainList[i].child[j].precision + '"><img src="../img/lsyx_xd22.png"><img class="pic1_terrain" src="../img/lsyx_xd11.png"></span><!-- ../img/lsyx_xd.png小项 -->';
@@ -393,15 +416,15 @@ function cerateTIInformation(obj, type) {
 	var str = obj.val();
 	var arr = str.split("#@");
 	if(arr.length == 5){
-		document.getElementById("terImgInformationName" + "_" + type).innerText = arr[0] + arr[1];
-		document.getElementById("terImgInformationProduction" + "_" + type).innerText = arr[2];
-		document.getElementById("terImgInformationArea" + "_" + type).innerText = arr[3];
-		document.getElementById("terImgInformationPrecision" + "_" + type).innerText = arr[4];
+		document.getElementById("terImgInformationName" + "_" + type).innerText = "名称:" + arr[1];
+		document.getElementById("terImgInformationProduction" + "_" + type).innerText = "提供方:" + arr[2];
+		document.getElementById("terImgInformationArea" + "_" + type).innerText = "面积:" + arr[3];
+		document.getElementById("terImgInformationPrecision" + "_" + type).innerText = "数据经度:" + arr[4];
 	}else if(arr.length == 6){
-		document.getElementById("terImgInformationName" + "_" + type).innerText = arr[0] + "." + arr[1] + arr[2];
-		document.getElementById("terImgInformationProduction" + "_" + type).innerText = arr[3];
-		document.getElementById("terImgInformationArea" + "_" + type).innerText = arr[4];
-		document.getElementById("terImgInformationPrecision" + "_" + type).innerText = arr[5];
+		document.getElementById("terImgInformationName" + "_" + type).innerText = "名称:" + arr[1] + arr[2];
+		document.getElementById("terImgInformationProduction" + "_" + type).innerText = "提供方:" + arr[3];
+		document.getElementById("terImgInformationArea" + "_" + type).innerText = "面积:" + arr[4];
+		document.getElementById("terImgInformationPrecision" + "_" + type).innerText = "数据经度:" + arr[5];
 	}
 }
 
@@ -480,19 +503,19 @@ function setTerImgToggle(obj, type) {
 			
 		}else{
 			if(arr[1] == "null"){
-				$("#imageList .lsyx_sj_left").find("span").each(function(i){
-					this.style.color = "#000000";
-				});
-				$("#imageCss").find(".sjz_dd_image").each(function(i){
-					if(this.id.split("#@")[1] == "show"){
-						this.id = this.id.split("#@")[0] + "#@hide";
-					}
-				});
-				if(imageLayerList.length != 0){
-					for(var i=0;i<imageLayerList.length;i++){
-						map3D.hidelayer(imageLayerList[i].imageLayer);
-					}
-				}
+				// $("#imageList .lsyx_sj_left").find("span").each(function(i){
+				// 	this.style.color = "#000000";
+				// });
+				// $("#imageCss").find(".sjz_dd_image").each(function(i){
+				// 	if(this.id.split("#@")[1] == "show"){
+				// 		this.id = this.id.split("#@")[0] + "#@hide";
+				// 	}
+				// });
+				// if(imageLayerList.length != 0){
+				// 	for(var i=0;i<imageLayerList.length;i++){
+				// 		map3D.hidelayer(imageLayerList[i].imageLayer);
+				// 	}
+				// }
 				if(arr[0].split("#")[1] == "no"){
 					var attr = getAttrByPath(arr[0].split("#")[0]);
 					var layer = map3D.loadDOM(arr[0].split("#")[0],[attr.minX,attr.minY,attr.maxX,attr.maxY],attr.minLevel,attr.maxLevel,attr.srs);
@@ -506,19 +529,19 @@ function setTerImgToggle(obj, type) {
 				document.getElementById(arr[0]).style.color="#2f88e6";
 				obj.id = arr[0] + "#@show";
 			}else if(arr[1] == "hide"){
-				$("#imageList .lsyx_sj_left").find("span").each(function(i){
-					this.style.color="#000000";
-				});
-				$("#imageCss").find(".sjz_dd_image").each(function(i){
-					if(this.id.split("#@")[1] == "show"){
-						this.id = this.id.split("#@")[0] + "#@hide";
-					}
-				});
-				if(imageLayerList.length != 0){
-					for(var i=0;i<imageLayerList.length;i++){
-						map3D.hidelayer(imageLayerList[i].imageLayer);
-					}
-				}
+				// $("#imageList .lsyx_sj_left").find("span").each(function(i){
+				// 	this.style.color="#000000";
+				// });
+				// $("#imageCss").find(".sjz_dd_image").each(function(i){
+				// 	if(this.id.split("#@")[1] == "show"){
+				// 		this.id = this.id.split("#@")[0] + "#@hide";
+				// 	}
+				// });
+				// if(imageLayerList.length != 0){
+				// 	for(var i=0;i<imageLayerList.length;i++){
+				// 		map3D.hidelayer(imageLayerList[i].imageLayer);
+				// 	}
+				// }
 				if(imageLayerList.length != 0){
 					for(var i=0;i<imageLayerList.length;i++){
 						if(imageLayerList[i].layerID == arr[0].split("#")[0]){
@@ -529,14 +552,14 @@ function setTerImgToggle(obj, type) {
 				document.getElementById(arr[0]).style.color="#2f88e6";
 				obj.id = arr[0] + "#@show";
 			}else if(arr[1] == "show"){
-				$("#imageList .lsyx_sj_left").find("span").each(function(i){
-					this.style.color="#000000";
-				});
-				$("#imageCss").find(".sjz_dd_image").each(function(i){
-					if(this.id.split("#@")[1] == "show"){
-						this.id = this.id.split("#@")[0] + "#@hide";
-					}
-				});
+				// $("#imageList .lsyx_sj_left").find("span").each(function(i){
+				// 	this.style.color="#000000";
+				// });
+				// $("#imageCss").find(".sjz_dd_image").each(function(i){
+				// 	if(this.id.split("#@")[1] == "show"){
+				// 		this.id = this.id.split("#@")[0] + "#@hide";
+				// 	}
+				// });
 				if(imageLayerList.length != 0){
 					for(var i=0;i<imageLayerList.length;i++){
 						if(imageLayerList[i].layerID == arr[0].split("#")[0]){
@@ -555,19 +578,19 @@ function setTerImgToggle(obj, type) {
 			
 		}else{
 			if(arr[1] == "null"){
-				$("#terrainList .lsyx_sj_left").find("span").each(function(i){
-					this.style.color = "#000000";
-				});
-				$("#terrainCss").find(".sjz_dd_terrain").each(function(i){
-					if(this.id.split("#@")[1] == "show"){
-						this.id = this.id.split("#@")[0] + "#@hide";
-					}
-				});
-				if(terrainLayerList.length != 0){
-					for(var i=0;i<terrainLayerList.length;i++){
-						map3D.hidelayer(terrainLayerList[i].terrainLayer);
-					}
-				}
+				// $("#terrainList .lsyx_sj_left").find("span").each(function(i){
+				// 	this.style.color = "#000000";
+				// });
+				// $("#terrainCss").find(".sjz_dd_terrain").each(function(i){
+				// 	if(this.id.split("#@")[1] == "show"){
+				// 		this.id = this.id.split("#@")[0] + "#@hide";
+				// 	}
+				// });
+				// if(terrainLayerList.length != 0){
+				// 	for(var i=0;i<terrainLayerList.length;i++){
+				// 		map3D.hidelayer(terrainLayerList[i].terrainLayer);
+				// 	}
+				// }
 				if(arr[0].split("#")[1] == "no"){
 					var attr = getAttrByPath(arr[0].split("#")[0]);
 					var layer = map3D.loadDEM(arr[0].split("#")[0],[attr.minX,attr.minY,attr.maxX,attr.maxY],attr.minLevel,attr.maxLevel,attr.srs);
@@ -581,19 +604,19 @@ function setTerImgToggle(obj, type) {
 				document.getElementById(arr[0]).style.color="#2f88e6";
 				obj.id = arr[0] + "#@show";
 			}else if(arr[1] == "hide"){
-				$("#terrainList .lsyx_sj_left").find("span").each(function(i){
-					this.style.color="#000000";
-				});
-				$("#terrainCss").find(".sjz_dd_terrain").each(function(i){
-					if(this.id.split("#@")[1] == "show"){
-						this.id = this.id.split("#@")[0] + "#@hide";
-					}
-				});
-				if(terrainLayerList.length != 0){
-					for(var i=0;i<terrainLayerList.length;i++){
-						map3D.hidelayer(terrainLayerList[i].terrainLayer);
-					}
-				}
+				// $("#terrainList .lsyx_sj_left").find("span").each(function(i){
+				// 	this.style.color="#000000";
+				// });
+				// $("#terrainCss").find(".sjz_dd_terrain").each(function(i){
+				// 	if(this.id.split("#@")[1] == "show"){
+				// 		this.id = this.id.split("#@")[0] + "#@hide";
+				// 	}
+				// });
+				// if(terrainLayerList.length != 0){
+				// 	for(var i=0;i<terrainLayerList.length;i++){
+				// 		map3D.hidelayer(terrainLayerList[i].terrainLayer);
+				// 	}
+				// }
 				if(terrainLayerList.length != 0){
 					for(var i=0;i<terrainLayerList.length;i++){
 						if(terrainLayerList[i].layerID == arr[0].split("#")[0]){
@@ -604,14 +627,14 @@ function setTerImgToggle(obj, type) {
 				document.getElementById(arr[0]).style.color="#2f88e6";
 				obj.id = arr[0] + "#@show";
 			}else if(arr[1] == "show"){
-				$("#terrainList .lsyx_sj_left").find("span").each(function(i){
-					this.style.color="#000000";
-				});
-				$("#terrainCss").find(".sjz_dd_terrain").each(function(i){
-					if(this.id.split("#@")[1] == "show"){
-						this.id = this.id.split("#@")[0] + "#@hide";
-					}
-				});
+				// $("#terrainList .lsyx_sj_left").find("span").each(function(i){
+				// 	this.style.color="#000000";
+				// });
+				// $("#terrainCss").find(".sjz_dd_terrain").each(function(i){
+				// 	if(this.id.split("#@")[1] == "show"){
+				// 		this.id = this.id.split("#@")[0] + "#@hide";
+				// 	}
+				// });
 				if(terrainLayerList.length != 0){
 					for(var i=0;i<terrainLayerList.length;i++){
 						if(terrainLayerList[i].layerID == arr[0].split("#")[0]){

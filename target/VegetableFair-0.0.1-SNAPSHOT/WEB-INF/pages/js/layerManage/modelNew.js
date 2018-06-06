@@ -14,6 +14,12 @@ var modelSName = "";
 var initTypeArr = [];
 //#@true、#@false表示加载状态
 //#@show、#@hide表示子级显影状态,控制全选
+//声明地图图层第一层级数组对象(存储第一层级节点对象)
+var modelLevelInfo = [];
+//声明地图图层第二层级数组对象(存储第二层级接口对象level2)
+var modelLevelInfoSec = [];
+//声明第二层级名称数组(寿光项目需求使用-仅适用当前服务)
+var modelSecInfo = [{name:"1号馆",parentID:"370700_370783"},{name:"2号馆",parentID:"370700_370783"},{name:"3-4号馆",parentID:"370700_370783"},{name:"5号馆",parentID:"370700_370783"},{name:"6号馆",parentID:"370700_370783"},{name:"7号馆",parentID:"370700_370783"},{name:"8号馆",parentID:"370700_370783"},{name:"9号馆",parentID:"370700_370783"},{name:"10号馆",parentID:"370700_370783"},{name:"11号馆",parentID:"370700_370783"},{name:"12号馆",parentID:"370700_370783"}];
 
 /**
  * 获取模型列表集合并生成页面
@@ -59,8 +65,8 @@ function createModelList(data) {
 	// 模型列表
 	for(var i=0;i<modelList.length;i++){
 		//设置当前城市
-		//var currentCityName = modelList[i].level0[0].layerName;
-		var currentCityName = "寿光市";
+		var currentCityName = modelList[i].level0[0].layerName;
+		//var currentCityName = "寿光市";
 		document.getElementById("currentCity").value = currentCityName;
 		for(var j=0;j<modelList[i].level1.length;j++){
             if(modelList[i].level1[j].layerName=="市辖区"){
@@ -72,44 +78,89 @@ function createModelList(data) {
             }else if(modelList[i].level1[j].layerName=="相城区"){
                 modelList[i].level1[j].layerName="姚桥新苑";
             }
+            //存储第一层级节点数组对象
+            modelLevelInfo.push(modelList[i].level1[j]);
 			modelResultList += '<ul id="tree_g1" class="map_dttc_menu_tree_menu">';
 			modelResultList += '<div id="tree_z1" class="z_menu"  onclick="flyModelPostion(\'' + modelList[i].level1[j].layerName +'\')">';
-			modelResultList += '<span class="tree_xl"></span> <span class="tree_icon"></span>';
+			modelResultList += '<span class="tree_xl"></span> <span class="tree_icon" style="background:url(../img/city.png);"></span>';
 			//modelResultList += '<span class="tree_text">' + modelList[i].level1[j].layerName + '</span>';
             modelResultList += '<span class="tree_text">' + modelList[i].level1[j].layerName + '</span>';
 			modelResultList += '</div>';
 			modelResultList += '<span class="tree_xy" name="null" id="' + modelList[i].level1[j].layerID + "#@false" +'" value="hide" onclick="nodeCssSwitch(this);layerToggle(\'' + modelList[i].level1[j].layerID + '\', 1, this);"></span>';
 			modelResultList += '</ul>';
 			modelResultList += '<div class="tree_k1">';
-			for(var k=0;k<modelList[i].level2.length;k++){
-				if(modelList[i].level1[j].layerID == modelList[i].level2[k].parentID){
-					if(modelList[i].level2[k].layerType.substring(0,3) == defaultLoadType){
-						initTypeArr.push(modelList[i].level2[k].layerID);
-					}
+			if(modelSecInfo[0].parentID == modelList[i].level1[j].layerID){//判定如果是当前发布的寿光服务则
+				for(var k = 0; k < modelSecInfo.length; k++){
+					var name = modelSecInfo[k].name;
+					modelSecInfo[k].id = k+"_sg";
+					var reg = new RegExp(name);
 					modelResultList += '<ul id="tree_g2" class="map_dttc_menu_tree_menu1">';
 					modelResultList += '<div id="tree_z2" class="z_menu" >';
 					//二层时采用箭头样式
-					modelResultList += '<span style="margin-left: 20px;filter:alpha(opacity=0);" class="tree_xl"></span>';
+//					modelResultList += '<span style="margin-left: 20px;filter:alpha(opacity=0);" class="tree_xl"></span>';
 					//三层时采用箭头样式
-//					modelResultList += '<span style="margin-left: 20px;filter:alpha(opacity=40);" class="tree_xl"></span>'; 
-					modelResultList += '<span class="tree_icon" style="background:url(../img/' + modelList[i].level2[k].layerType.substring(0,3) + '.png);background-repeat:no-repeat;"></span> <span class="tree_text">' + modelList[i].level2[k].layerName + '</span>';
+					modelResultList += '<span style="margin-left: 20px;filter:alpha(opacity=100);" class="tree_xl"></span>'; 
+					//备注:发布数据的时候发布层级为1起始导致数据库读取建筑图标未读取到，因项目需求先行注释，后面可自行解除
+					//modelResultList += '<span class="tree_icon" style="background:url(../img/' + modelList[i].level2[k].layerType.substring(0,3) + '.png);background-repeat:no-repeat;"></span> <span class="tree_text">' + modelList[i].level2[k].layerName + '</span>';
+					modelResultList += '<span class="tree_icon" style="background:url(../img/T05.png);background-repeat:no-repeat;"></span> <span class="tree_text">' + name + '</span>';
 					modelResultList += '</div>';
-					modelResultList += '<span class="tree_xy" name="' + modelList[i].level2[k].parentID + '" id="' + modelList[i].level2[k].layerID + "#@false" + '" value="hide" onclick="nodeCssSwitch(this);layerToggle(\'' + modelList[i].level2[k].layerID + '\', 2, this)"></span>';
+					modelResultList += '<span class="tree_xy" name="' + modelSecInfo[k].parentID + '" id="' + modelSecInfo[k].id + '#@false"  value="hide" onclick="modelShowOrHideSec(this);"></span>';
 					modelResultList += '</ul>';
 					/*加载第三层级*/
-//					modelResultList += '<div class="tree_k1">';
-//					for(var l=0;l<modelList[i].level3.length;l++){
-//						if(modelList[i].level2[k].layerID == modelList[i].level3[l].parentID){
-//							modelResultList += '<ul class="map_dttc_menu_tree_menu1">';
-//							modelResultList += '<div class="z_menu">';
-//							modelResultList += '<span style="margin-left: 60px;filter:alpha(opacity=40);" class="tree_icon1"></span>'; 
-//							modelResultList += '<span class="tree_text1">' + modelList[i].level3[l].layerName + '</span>';
-//							modelResultList += '</div>';
-//							modelResultList += '<span class="tree_xy" name="' + modelList[i].level3[l].parentID  + '" id="' + modelList[i].level3[l].layerID + "#@false" + '" value="hide"  onclick="nodeCssSwitch(this);layerToggle(\'' + modelList[i].level3[l].layerID + '\', 3, this)"></span>';
-//							modelResultList += '</ul>';
-//						}
-//					}
-//					modelResultList += '</div>';
+					modelResultList += '<div class="tree_k1">';
+					for(var l=0;l<modelList[i].level2.length;l++){
+						if(modelList[i].level2[l].layerName.match(reg)){
+							if(name == "2号馆" && modelList[i].level2[l].layerName.match(new RegExp("12号馆"))){
+								continue;
+							}else if(name == "1号馆" && modelList[i].level2[l].layerName.match(new RegExp("11号馆"))){
+								continue;
+							}
+							//存储第二层级数组对象level2
+							modelLevelInfoSec.push(modelList[i].level2[l]);
+							modelResultList += '<ul class="map_dttc_menu_tree_menu1">';
+							modelResultList += '<div class="z_menu">';
+							modelResultList += '<span style="margin-left: 60px;filter:alpha(opacity=70);" class="tree_icon1"></span>'; 
+							modelResultList += '<span class="tree_text1">' + modelList[i].level2[l].layerName + '</span>';
+							modelResultList += '</div>';
+							modelResultList += '<span class="tree_xy" name="' + modelSecInfo[k].id  + '" id="' + modelList[i].level2[l].layerID + "#@false" + '" value="hide"  onclick="nodeCssSwitch(this);layerToggle(\'' + modelList[i].level2[l].layerID + '\', 3, this)"></span>';
+							modelResultList += '</ul>';
+						}
+					}
+					modelResultList += '</div>';
+				}
+			}else{//否则按正常流程创建列表
+				for(var k=0;k<modelList[i].level2.length;k++){
+					if(modelList[i].level1[j].layerID == modelList[i].level2[k].parentID){
+						if(modelList[i].level2[k].layerType.substring(0,3) == defaultLoadType){
+							initTypeArr.push(modelList[i].level2[k].layerID);
+						}
+						modelResultList += '<ul id="tree_g2" class="map_dttc_menu_tree_menu1">';
+						modelResultList += '<div id="tree_z2" class="z_menu" >';
+						//二层时采用箭头样式
+//						modelResultList += '<span style="margin-left: 20px;filter:alpha(opacity=0);" class="tree_xl"></span>';
+						//三层时采用箭头样式
+						modelResultList += '<span style="margin-left: 20px;filter:alpha(opacity=100);" class="tree_xl"></span>'; 
+						//备注:发布数据的时候发布层级为1起始导致数据库读取建筑图标未读取到，因项目需求先行注释，后面可自行解除
+						//modelResultList += '<span class="tree_icon" style="background:url(../img/' + modelList[i].level2[k].layerType.substring(0,3) + '.png);background-repeat:no-repeat;"></span> <span class="tree_text">' + modelList[i].level2[k].layerName + '</span>';
+						modelResultList += '<span class="tree_icon" style="background:url(../img/T05.png);background-repeat:no-repeat;"></span> <span class="tree_text">' + modelList[i].level2[k].layerName + '</span>';
+						modelResultList += '</div>';
+						modelResultList += '<span class="tree_xy" name="' + modelList[i].level2[k].parentID + '" id="' + modelList[i].level2[k].layerID + "#@false" + '" value="hide" onclick="nodeCssSwitch(this);layerToggle(\'' + modelList[i].level2[k].layerID + '\', 2, this)"></span>';
+						modelResultList += '</ul>';
+						/*加载第三层级*/
+						modelResultList += '<div class="tree_k1">';
+						for(var l=0;l<modelList[i].level3.length;l++){
+						if(modelList[i].level2[k].layerID == modelList[i].level3[l].parentID){
+								modelResultList += '<ul class="map_dttc_menu_tree_menu1">';
+								modelResultList += '<div class="z_menu">';
+								modelResultList += '<span style="margin-left: 60px;filter:alpha(opacity=40);" class="tree_icon1"></span>'; 
+								modelResultList += '<span class="tree_text1">' + modelList[i].level3[l].layerName + '</span>';
+								modelResultList += '</div>';
+								modelResultList += '<span class="tree_xy" name="' + modelList[i].level3[l].parentID  + '" id="' + modelList[i].level3[l].layerID + "#@false" + '" value="hide"  onclick="nodeCssSwitch(this);(\'' + modelList[i].level3[l].layerID + '\', 3, this)"></span>';
+								modelResultList += '</ul>';
+							}
+						}
+						modelResultList += '</div>';
+					}
 				}
 			}
 			modelResultList += '</div>';
@@ -125,6 +176,62 @@ function createModelList(data) {
 	for(var i=0;i<initTypeArr.length;i++){
 		var domID = initTypeArr[i] + "#@false";
 		document.getElementById(domID).click();
+	}
+}
+
+/**
+ * 第二层级列表控制子层级显影(针对项目需求增加,可改进)
+ * @returns
+ */
+function modelShowOrHideSec2(name){
+	var reg = new RegExp(name);
+	//获取全部的模型子节点信息
+	var doms = $('[name="' + modelLevelInfoSec[0].parentID +'"]');
+	for(var i =0; i < modelLevelInfoSec.length; i++){
+		var layerName = modelLevelInfoSec[i].layerName;
+		//判断当前节点是否为当前选中父节点的子节点
+		if(layerName.match(reg)){
+			if(name == "2号馆" && layerName.match(new RegExp("12号馆"))){
+				continue;
+			}else if(name == "1号馆" && layerName.match(new RegExp("11号馆"))){
+				continue;
+			}
+			//对当前匹配的节点进行筛选，筛选相应节点的id
+			for(var j = 0; j < doms.length; j++){
+				var id = doms.eq(j).attr("id");
+				if(id.split("#@")[0] == modelLevelInfoSec[i].layerID){
+					doms[j].click();
+					break;
+				}
+			}
+		}
+	}
+}
+
+/**
+ * 第二层级列表控制子层级显影(针对项目需求增加,可改进)
+ * 级联递归操作本身控制子层级时影响到了父层级，因此父层级不需做样式调整
+ * @returns
+ */
+function modelShowOrHideSec(obj){
+	var allVal = obj.value;
+	//获取全部的模型子节点信息
+	var doms = $('[name="' + obj.id.split("#@")[0] +'"]');
+	//对当前匹配的节点进行筛选，筛选相应节点的id
+	for(var i = 0; i < doms.length; i++){
+		if(allVal == 'hide'){
+			if(doms[i].value == 'hide'){
+				doms[i].click();
+			}
+		//obj.style.backgroundImage = "url(../img/tree_xy2.png)";
+		//obj.value = "show";
+		}else if(allVal == 'show'){
+			if(doms[i].value == 'show'){
+				doms[i].click();
+			}
+		//obj.style.backgroundImage = "url(../img/tree_xy1.png)";
+		//obj.value = "hide";
+		}
 	}
 }
 

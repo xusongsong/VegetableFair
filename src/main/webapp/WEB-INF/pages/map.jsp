@@ -103,10 +103,10 @@
 <%-- <script src="${ctx }/om/videoResource/videoMonitor.js"></script> --%>
 <%-- <script src="${ctx }/om/videoResource/lockControl.js"></script> --%>
 <script src="${ctx }om/videoResource/labelMonitor.js"></script>
-<script src="${ctx }/om/SG/videoMonitor.js"></script> 
-<script src="${ctx }/om/SG/videoPatrol.js"></script> 
-<script src="${ctx }/om/SG/personFace.js"></script> 
-<script src="${ctx }/om/SG/zdxg.js"></script> 
+<script src="${ctx }/om/AJ/videoMonitor.js"></script> 
+<script src="${ctx }/om/AJ/videoPatrol.js"></script> 
+<script src="${ctx }/om/AJ/personFace.js"></script> 
+<script src="${ctx }/om/AJ/zdxg.js"></script> 
 <script type='text/javascript' src='${ctx }dwr/engine.js'></script>
 <script type='text/javascript' src='${ctx }dwr/util.js'></script>
 	<!-- <script src="../om/middleWare/ArcGISLayerTab.js"></script> -->
@@ -119,7 +119,7 @@
 		<ul class="OMmap_top_logo">
 			<li class="OMmap_top_logo_c">
 				<img src="../img/logo.png">
-				<span><strong>山东寿光三维公安警用系统</strong></span>
+				<span><strong>浙江安吉新闻集团展厅系统</strong></span>
 			</li>
 		</ul>
 	</div>
@@ -152,6 +152,7 @@
 							<span>视频投影</span>
 						</ul>
 					</div>
+					<!-- 
 					<div>
 						<ul class="k9">
 							<span class="k3_pic"><img src="../img/rkgl1.png"></span>
@@ -162,6 +163,7 @@
 							<span>人脸识别</span>
 						</ul>
 					</div>
+					 -->
 					<!-- <div>
 					<ul class="k3">
 						<span class="k3_pic"><img src="../img/aftc1.png"></span>

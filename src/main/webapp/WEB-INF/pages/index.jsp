@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <title>社区系统</title>
+    <title>展厅系统</title>
     <link rel="stylesheet" type="text/css" href="${ctx }css/style.css">
     <script src="${ctx }js/jquery.js"></script>
     <script src="${ctx }js/index.js"></script>
@@ -65,7 +65,7 @@
 <body>
 <!-- <a href="mapSearcher/index"><input type="button" value="tiao zhuan"></a> -->
 <div class="login_center">
-    <div class="top"><span><img src="${ctx }img/img_index/logo.png" /></span><strong>山东寿光三维公安警用系统</strong></div>
+    <div class="top"><span><img src="${ctx }img/img_index/logo.png" /></span><strong>安吉新闻展厅系统</strong></div>
     <ul class="login_k" >
         <li class="login_k_menu">
             <span><img src="${ctx }img/img_index/admin.png"></span>

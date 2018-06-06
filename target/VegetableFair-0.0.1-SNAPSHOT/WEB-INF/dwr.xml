@@ -15,7 +15,7 @@
 	 -->
 
     <create creator="new" javascript="snapshotPush">
-       <param name="class" value="com.coorun.faceidentifymanage.mq.realtimemessage.SnaphostPushCallback"/>
+       <param name="class" value="com.coorun.faceidentifymanage.mq.realtimemessage.SnapshotPushCallback"/>
     </create>
 
     <create creator="new" javascript="alarmPush">

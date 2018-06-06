@@ -73,6 +73,8 @@
 	var artemisAppSecret = "${artemisAppSecret }";
 	//播放类型
 	var playType = "${playType}";
+	//是否开启推送
+	var realPush = "${realPush}";
 </script>
 <script src="${ctx }/js/map.js"></script>
 <script src="${ctx }/om/common/conf/Config.js"></script>
@@ -100,12 +102,13 @@
 <script src="${ctx }/om/layerManage/regulatoryQuery.js"></script>
 <%-- <script src="${ctx }/om/videoResource/videoMonitor.js"></script> --%>
 <%-- <script src="${ctx }/om/videoResource/lockControl.js"></script> --%>
+<script src="${ctx }om/videoResource/labelMonitor.js"></script>
 <script src="${ctx }/om/SG/videoMonitor.js"></script> 
 <script src="${ctx }/om/SG/videoPatrol.js"></script> 
 <script src="${ctx }/om/SG/personFace.js"></script> 
+<script src="${ctx }/om/SG/zdxg.js"></script> 
 <script type='text/javascript' src='${ctx }dwr/engine.js'></script>
 <script type='text/javascript' src='${ctx }dwr/util.js'></script>
-<script type="text/javascript" src="${ctx }dwr/interface/alarmPush.js"></script>
 	<!-- <script src="../om/middleWare/ArcGISLayerTab.js"></script> -->
 </head>
 <body onload="init();dwr.engine.setActiveReverseAjax(true);dwr.engine.setNotifyServerOnPageUnload(true);">
@@ -159,7 +162,7 @@
 							<span>人脸识别</span>
 						</ul>
 					</div>
-					<div>
+					<!-- <div>
 					<ul class="k3">
 						<span class="k3_pic"><img src="../img/aftc1.png"></span>
 						<span>鹰眼</span>
@@ -168,7 +171,7 @@
 						<span class="k3_pic"><img src="../img/aftc2.png"></span>
 						<span>鹰眼</span>
 					</ul>
-				</div>
+					</div> -->
 					<div>
 						<ul class="k7">
 							<span class="k3_pic"><img src="../img/afgl1.png"></span>
@@ -304,7 +307,7 @@
 					<span><strong>巡更列表</strong></span>
 				</div>
 				<div id="gl_menu_ljgl">
-					<div class="xianshimenu3">
+					<!-- <div class="xianshimenu3">
 						<div class="jz_ssjg4">
 							<span class="ss_index_menu_bh1">1</span>
 							<span class="ljgh_bf">
@@ -322,7 +325,7 @@
 							<span class="shuzi">1</span> <span class="shuzi">1</span> <span
 								style="width: 53px;">下一页&gt;</span>
 						</div>
-					</div> 
+					</div>  -->
 				</div>
 				<!-- <div class="xianshimenu3">
 					<div class="jz_ssjg4">
@@ -450,77 +453,6 @@
 							<span class="ghss_an" onclick = "videoSearchInfo();"></span>
 						</div>
 						<div class="map_dttc_menu_tree" id="videoList">
-							<div class="zjd">
-								<div>
-									<span class="tree_xl"></span>
-									<span class="pic"><img src="img/tree_jd1.png"></span>
-									<span>国际会展中心</span>
-								</div>
-								<span class="tree_xy"></span>
-							</div>
-							<div>
-								<div class="zjd1">
-									<div style="width: 184px;height: 16px;float: left;">
-										<span class="tree_xl"></span>
-										<span class="pic"><img src="img/tree_jd1.png"></span>
-										<span>一号馆</span>
-									</div>
-									<span class="tree_xy"></span>
-								</div>
-								<div>
-									<div class="zjd1" style="margin-left: 40px;width: 224px;">
-										<div>
-											<span class="tree_xl"></span>
-											<span class="pic"><img src="img/tree_jd1.png"></span>
-											<span>一层</span>
-										</div>
-										<span class="tree_xy"></span>
-									</div>
-									<div>
-										<div class="zjd1" style="margin-left: 60px;width: 204px;">
-											<div>
-												<span class="tree_xl"></span>
-												<span class="pic"><img src="img/tree_jd1.png"></span>
-												<span>D区</span>
-											</div>
-											<span class="tree_xy"></span>
-										</div>
-										<div>
-											<div class="zjd1" style="margin-left: 80px;width: 184px;">
-												<div style="width: 164px;">
-													<span class="tree_xl"></span>
-													<span class="pic"><img src="img/tree_jd1.png"></span>
-													<span>D区</span>
-												</div>
-												<span class="tree_xy"></span>
-											</div>
-											<div>
-												<div class="zjd2" title="xgsj001-002">
-													<div>
-														<span class="pic"><img src="img/ss_ico.png"></span>
-														<span class="gm">xgsj001-002</span>
-													</div>
-													<span class="tree_xy"></span>
-												</div>
-												<div class="zjd2">
-													<div>
-														<span class="pic"><img src="img/ss_ico.png"></span>
-														<span class="gm">xgsj001-002</span>
-													</div>
-													<span class="tree_xy"></span>
-												</div>
-												<div class="zjd2">
-													<div>
-														<span class="pic"><img src="img/ss_ico.png"></span>
-														<span class="gm">xgsj001-002</span>
-													</div>
-													<span class="tree_xy"></span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 <!--
 						<div>
@@ -801,6 +733,7 @@
 								<div class="rlsb_menu_qh">
 									<span style="margin-left: 10px;" class="rlsb_menu_qh_kgfx">设备列表</span>
 									<span>识别结果</span>
+									<span>预警信息</span>
 								</div>
 							</div>
 							<div class="rlsb">
@@ -815,11 +748,13 @@
 									<span><input type="text" placeholder="输入查询关键字"></span>
 									<span class="ghss_an"></span>
 								</div>
-<!--
-								<div class="yulan_btn">
-									<span>预览</span>
+								<div class="lj_bcqc1" style="width: 126px;margin-bottom: 10px;">
+									<span class="lj_bcqc_bc"  onclick="faceListCheck();">预览</span>
+									<span class="lj_bcqc_ss" id="checkAll" onclick="faceChooseAll();" value = "0">全选</span>
 								</div>
--->
+								<!-- <div class="yulan_btn">
+									<span style="margin-right:10px;" onclick="faceListCheck();">预览</span>
+								</div> -->
 								<div class="map_dttc_menu_tree" style="height: 100%;" >
 									<div class="rfcx_menu" id="faceList">
 										<div class="rfgl_lb_menu_lb">
@@ -846,30 +781,14 @@
 								</div>
 							</div>
 							<div class="rlsb">
-								<div class="sbjg" id="realList">
-									<div class="sb_pic">
-										<span class="zp"></span>
-										<span>男</span>
+								<div class="real_rlsb">
+									<div class="sbjg" id="realList">
 									</div>
-									<div class="sb_pic">
-										<span class="zp"></span>
-										<span>男</span>
-									</div>
-									<div class="sb_pic">
-										<span class="zp"></span>
-										<span>男</span>
-									</div>
-									<div class="sb_pic">
-										<span class="zp"></span>
-										<span>男</span>
-									</div>
-									<div class="sb_pic">
-										<span class="zp"></span>
-										<span>女</span>
-									</div>
-									<div class="sb_pic">
-										<span class="zp"></span>
-										<span>女</span>
+								</div>
+							</div>
+							<div class="rlsb">
+								<div class="real_rlsb">
+									<div class="sbjg" id="alarmList">
 									</div>
 								</div>
 							</div>
@@ -1066,29 +985,36 @@
 									<span class="pic"><img src="../img/tree_jd1.png"></span>
 									<span>国际会展中心</span>
 								</div>
-								<span class="tree_xy"></span>
+								<span class="tree_xy" id="ty"></span>
 							</div>
 							<div>
-								<div class="zjd2" style="margin-left: 40px;width: 224px;">
+								<div class="zjd2" style="margin-left: 35px;width: 224px;">
 									<div>
 										<span class="pic"><img src="../img/ss_ico.png"></span>
-										<span class="gm" style="width: 170px;">xgsj001-002</span>
+										<span class="gm" style="width: 170px;">洛兴街与尧河路-东后</span>
 									</div>
-									<span class="tree_xy"></span>
+									<span class="tree_xy"  id="ty1"  onclick="openty(1);"></span>
 								</div>
-								<div class="zjd2" style="margin-left: 40px;width: 224px;">
+								<div class="zjd2" style="margin-left: 35px;width: 224px;">
 									<div>
 										<span class="pic"><img src="../img/ss_ico.png"></span>
-										<span class="gm" style="width: 170px;">xgsj001-002</span>
+										<span class="gm" style="width: 170px;" >洛兴街与顺河路-东</span>
 									</div>
-									<span class="tree_xy"></span>
+									<span class="tree_xy" id="ty2" onclick="openty(2);"></span>
 								</div>
-								<div class="zjd2" style="margin-left: 40px;width: 224px;">
+								<div class="zjd2" style="margin-left: 35px;width: 224px;">
 									<div>
 										<span class="pic"><img src="../img/ss_ico.png"></span>
-										<span class="gm" style="width: 170px;">xgsj001-002</span>
+										<span class="gm" style="width: 170px;" >圣城街与顺河路-东后</span>
 									</div>
-									<span class="tree_xy"></span>
+									<span class="tree_xy" id="ty3" onclick="openty(3);"></span>
+								</div>
+								<div class="zjd2" style="margin-left: 35px;width: 224px;">
+									<div>
+										<span class="pic"><img src="../img/ss_ico.png"></span>
+										<span class="gm" style="width: 170px;">圣城街与尧河路-东</span>
+									</div>
+									<span class="tree_xy"  id="ty4" onclick="openty(4);"></span>
 								</div>
 							</div>
 						</div>
@@ -1194,7 +1120,7 @@
 						<span>当前位置：</span> 
 						<span> 
 						<!-- <input type="text" value="苏州市" readonly="true" onfocus=this.blur()> -->
-							<input type="text" id="currentCity" value="寿光市" disabled="disabled">
+							<input type="text" id="currentCity"  disabled="disabled">
 						</span>
 						
 							<!-- <select>
@@ -1203,7 +1129,7 @@
 						
 					</div>  
 					<div class="map_dttc_menu_tree"  id="modelList"
-						style="overflow: auto; overflow-x: hidden;height:800px;" >
+						style="overflow: auto; overflow-x: hidden;height:730px;width:100%" >
 						<!-- <ul id="tree_g1" class="map_dttc_menu_tree_menu">
 							<div id="tree_z1" class="z_menu">
 								<span class="tree_xl"></span> <span class="tree_icon"></span> <span
@@ -2123,7 +2049,7 @@
                             <td class="bdk1" valign="middle">&nbsp;&nbsp;&nbsp;水平视角：</td>
                             <td class="bdk2" valign="middle">
                                 <form runat="server">
-                                    <input class="sz" id="horizontalView" runat="server" CssClass="mybutton" Text="0">
+                                    <input class="sz" id="horizontalView" runat="server" CssClass="mybutton" Text="0" value = "60">
                                 </form>
                             </td>
                         </tr>
@@ -2131,7 +2057,7 @@
                             <td class="bdk1" valign="middle">&nbsp;&nbsp;&nbsp;垂直选择视角：</td>
                             <td class="bdk2" valign="middle">
                                 <form runat="server">
-                                    <input class="sz" id="verticalView" runat="server" CssClass="mybutton" Text="0">
+                                    <input class="sz" id="verticalView" runat="server" CssClass="mybutton" Text="0" value="60">
                                 </form>
                             </td>
                         </tr>
@@ -2492,11 +2418,14 @@
 			</ul>
 			</div> -->
 
-			<!-- <li class="btm_right_top_left_xy">
+			<!--20180405修改-->
+			<li class="btm_right_top_left_xy">
 			<span class="btm_right_top_left_xy_dx" onclick="getTerrainOrImageList('terrain');">地形</span>
 				<div class="yx_xy">
 					<span class="btm_right_top_left_xy_yx" onclick="getTerrainOrImageList('image');">影像</span>
-				</div></li> -->
+				</div></li>
+			<!--20180405修改-->	
+			
 			<li class="btm_right_top">
 				<c:if test="${menuList != null}">
 					<ul class="btm_right_top_right">
@@ -2514,18 +2443,18 @@
 						<c:forEach items="${menuList}" var="menu" varStatus="status">
 							<c:if test="${menu.id == 'XT010102'}">
 								<!-- <span class="btm_right_top_right_line"></span> -->
-								<li class="btm_right_top_right_sxck"></li>
+								<!-- <li class="btm_right_top_right_sxck"></li> -->
 							</c:if>
 						</c:forEach>
 						<c:forEach items="${menuList}" var="menu" varStatus="status">
 							<c:if test="${menu.id == 'XT010103'}">
-								<span class="btm_right_top_right_line"></span>
-								<li class="btm_right_top_right_dxgc" id="dxgc"></li>
+								<!-- <span class="btm_right_top_right_line"></span>
+								<li class="btm_right_top_right_dxgc" id="dxgc"></li> -->
 							</c:if>
 						</c:forEach>
 						<c:forEach items="${menuList}" var="menu" varStatus="status">
 							<c:if test="${menu.id == 'XT010104'}">
-								<span class="btm_right_top_right_line"></span>
+								<!-- <span class="btm_right_top_right_line"></span> -->
 								<li class="btm_right_top_right_jt"></li>
 							</c:if>
 						</c:forEach>
@@ -2537,7 +2466,7 @@
 						</c:forEach>
 						<c:forEach items="${menuList}" var="menu" varStatus="status">
 							<c:if test="${menu.id == 'XT010106'}">
-								<span class="btm_right_top_right_line"></span>
+								 <span class="btm_right_top_right_line"></span>
 								<li class="btm_right_top_right_qp"></li>
 							</c:if>
 						</c:forEach>
@@ -2557,13 +2486,11 @@
 				</c:if>
 			</li>
 			 <!-- 二维地图 -->
-	        <li id="map2D"
-					style="float: left; width: 0%; height: 100%; background: #D5D5D5;">
+	        <li id="map2D" style="float: left; width: 0%; height: 100%; background: #D5D5D5;">
 	        	
 	        </li>
 	        <!-- 三维地图 -->
-	        <li   id="map3D"
-					style="width: 100%; height: 100%; background: #D5D5D5;">
+	        <li id="map3D" style="width: 100%; height: 100%; background: #D5D5D5;">
 	        </li>
 			<div class="map" style="width: 100%; height: 100%;">
 				<!--二维地图-->
@@ -2854,18 +2781,19 @@
 	scrolling="no" id="vehicleListFrame"
 	src="../vehicle/device/vehicle.do" height="228px" width="1565px;"></iframe>
 	<!-- 视频嵌入播放-->
-	<iframe name ="lockPlayFrame" frameborder="0" 
-		style="position: absolute; top: 120px; right: 0px; z-index: 101; display: none;"
+	<iframe name ="lockPlayFrame" frameborder="0" style="position: absolute; 
+		top: 120px; right: 0px; z-index: 101; display: none;"
 		scrolling="no" id="lockPlayFrame"
-		src="" height="500px;" width="600px;"></iframe>
+		src="" height="500px;" width="600px;">
+	</iframe>
 	<!-- 视频弹出播放-->
 	<iframe width=0 height=0 id="previewPopVideo"></iframe>
     <!--属性查询弹窗-->
-	<div id="sxcx_tk" class="alltk">
+	<!-- <div id="sxcx_tk" class="alltk">
 		<div class="map_ss_tk">
 			<ul class="sdsc_tk_top">
 				<span style="margin-left: 10px; font-size: 14px;"><strong>嘉文大厦</strong></span>
-				<!--<span style="margin-left: 20px;color: #b7b7b7;">详情>></span>-->
+				<span style="margin-left: 20px;color: #b7b7b7;">详情>></span>
 				<span id="sxcx_gb" class="qy_gb"></span>
 			</ul>
 			<ul class="q_xq">
@@ -2884,13 +2812,13 @@
 			</ul>
 		</div>
 		<div class="tk_zsjt"></div>
-	</div>
+	</div> -->
 	<!--人物查询弹窗-->
-	<div id="rwtc" class="alltk">
+	<!-- <div id="rwtc" class="alltk">
 		<div class="map_ss_tk">
 			<ul class="sdsc_tk_top">
 				<span style="margin-left: 10px; font-size: 14px;"><strong>基本信息</strong></span>
-				<!--<span style="margin-left: 20px;color: #b7b7b7;">详情>></span>-->
+				<span style="margin-left: 20px;color: #b7b7b7;">详情>></span>
 				<span class="qy_gb"></span>
 			</ul>
 			<ul class="q_xq">
@@ -2914,13 +2842,13 @@
 			</ul>
 		</div>
 		<div class="tk_zsjt"></div>
-	</div>
+	</div> -->
 	<!--建筑查询弹窗-->
-	<div id="jztc" class="alltk">
+	<!-- <div id="jztc" class="alltk">
 		<div class="map_ss_tk">
 			<ul class="sdsc_tk_top">
 				<span style="margin-left: 10px; font-size: 14px;"><strong>基本信息</strong></span>
-				<!--<span style="margin-left: 20px;color: #b7b7b7;">详情>></span>-->
+				<span style="margin-left: 20px;color: #b7b7b7;">详情>></span>
 				<span class="qy_gb"></span>
 			</ul>
 			<ul class="q_xq">
@@ -2946,13 +2874,13 @@
 			</ul>
 		</div>
 		<div class="tk_zsjt"></div>
-	</div>
+	</div> -->
 	<!--视频监控-->
-	<div id="spjk" class="alltk">
+	<!-- <div id="spjk" class="alltk">
 		<div class="map_ss_tk">
 			<ul class="sdsc_tk_top">
 				<span style="margin-left: 10px; font-size: 14px;"><strong>2单元视频信息</strong></span>
-				<!--<span style="margin-left: 20px;color: #b7b7b7;">详情>></span>-->
+				<span style="margin-left: 20px;color: #b7b7b7;">详情>></span>
 				<span class="qy_gb"></span>
 			</ul>
 			<ul class="q_xq">
@@ -2968,7 +2896,7 @@
 			</ul>
 		</div>
 		<div class="tk_zsjt"></div>
-	</div>
+	</div> -->
 	<div class="afhl">
 		<span class="sp"></span>
 		<span class="mj"></span>

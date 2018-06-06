@@ -95,7 +95,7 @@ function findViewPointByName(viewPointName) {
  */
 function addView(viewPointName, viewPointDescr) {
 	// 新增视点避免名称重复
-	var nameArr=findViewPointByName(viewPointName);
+	var nameArr = findViewPointByName(viewPointName);
 	for(var i=0;i<nameArr.length;i++){
 		if(nameArr[i] == viewPointName){
 			alert("视点名称已存在!");
@@ -109,7 +109,6 @@ function addView(viewPointName, viewPointDescr) {
 	// 获取当前视点
 	var points = map3D.getViewPoint();
 	var pointList = points.split(";");
-
 	$.ajax({
 		url : '../mapTools/addView.do',
 		type : "post",
@@ -172,17 +171,20 @@ function deleteView(id) {
 function openModify(thisId,descr) {
 	/** 修改功能框中赋值* */
 	// 名称-name
-	var viewInputText = $("#" + thisId).val().split("_")[1];
+	var ulValue = document.getElementById(thisId).getAttribute("value");
+	var ulValueArr = ulValue.split('_');
+	//console.log(ulValue);
+	var viewInputText = ulValueArr[1];
 	// 备注-descr
-	var viewTextarea = $("#" + thisId).val().split("_")[2];
+	var viewTextarea = ulValueArr[2];
 	viewTextarea = viewTextarea == "null" ? "" : viewTextarea;
 	$("#viewInputText").val(viewInputText);
 	$("#viewTextarea").val(viewTextarea);
 	// 修改框显隐
 	$('.bzxg_menu_sd').show();
 	/** 视点修改框---确定* */
-	$('#modifySure').unbind('click').click(function() {
-		var id = $("#" + thisId).val().split("_")[0];
+	$('#modifySure').unbind('click').click(function(){
+		var id = ulValueArr[0];
 		modifyView(id,descr);
 		$('.bzxg_menu_sd').hide();
 	});
@@ -274,7 +276,7 @@ function findViewPoint(pagenumber) {
 					viewResultList += '</ul>';
 				}
 				/** 分页查询* */
-				viewResultList += viewPager(pagenumber, totalPage);
+				viewResultList += createViewPageList(pagenumber, totalPage);
 			}
 			$('.sdsc_lb').html(viewResultList);
 			$('.sdsc_bj').unbind('click').click(function() {
@@ -285,6 +287,63 @@ function findViewPoint(pagenumber) {
 		}
 	});
 }
+
+/**
+ * 分页视点列表创建
+ * @param pageNo (分页数)
+ * @param totalPage (总页数)
+ * @returns pageList (分页结果集列表)
+ */
+function createViewPageList(pageNo,totalPage){
+	var currPage = pageNo;
+	var totalPage = totalPage;
+	var pageList = '';
+	//中间展示几页数目
+	var middlePageSize = 3;
+	//分页列表拼接
+	pageList += '<div class = "fanye">';
+	pageList += '<div class="fanye1">';
+	// 第一页
+	pageList += '<span style="width: 15px;" onclick="findViewPoint(' + 1
+			+ ')">&lt;&lt;</span> ';
+	// 上一页
+	if(currPage == 1){
+		pageList += '<span style="width: 53px;">&lt;</span>';
+	}else{
+		pageList += '<span style="width: 53px;" onclick="findViewPoint(' + (currPage - 1) + ')">&lt;</span>';
+	}
+	//设定中间起始值
+	var startPage = (currPage - 1) < 1 ? 1 : (currPage - 1);
+	//设定中间结束值
+	var endPage = (startPage + middlePageSize ) > totalPage ? totalPage :(startPage + middlePageSize); 
+	//该判定是为了当不足几页显示几页的样式
+	if(endPage <= middlePageSize){
+		endPage = middlePageSize;
+	}
+	//循环生成中间列表层级
+	for(var page = 1; page <= endPage; page++){
+		if(page == currPage){
+			pageList += '<span style="width: 25px;" class="shuzi"><b>' + currPage + '</b></span>';
+		}else{
+			pageList += '<span style="width: 25px;" class="shuzi" onclick="findViewPoint(' + page + ')"><b>' + page + '</b></span>';
+		}
+	}
+	//下一页
+	if(currPage == totalPage){
+		pageList += '<span style="width: 53px;">&gt;</span>';
+	}else{
+		pageList += '<span style="width: 53px;" onclick= "findViewPoint(' + (currPage + 1) + ') ">&gt;</span>';
+	}
+	//最后一页
+	pageList += '<span style="width: 15px;" onclick="findViewPoint(' + totalPage + ')">&gt;&gt;</span> ';
+	pageList += '</div>';
+	pageList += '</div> ';
+	return pageList;
+}
+
+
+
+
 
 /**
  * 分页查询
@@ -382,27 +441,27 @@ function HideWebDialog() {
  */
 function saveWebDialog(flage) {
 	if(flage){
-		function VPSDKCtrl::FireOnToolsNotify(str,id)
-		{
-	var msg = webobject.GetToolsResult().GetConfigValueByKey("Param");
-	var msgs = msg.split("@#");
-	if (msgs[0] == "1") {// 保存
-		// 视点名称
-		WegditViewName = msgs[1];
-		// 视点备注
-		WegditViewNote = msgs[2];
-		if(!WegditViewName){
-			alert("视点名称不能为空!");
-			return;
-		}
-		addView(WegditViewName, WegditViewNote);
-		HideWebDialog();
-	} else {// 取消或关闭
-		HideWebDialog();
-	}
+		function VPSDKCtrl::FireOnToolsNotify(str,id){
+			var msg = webobject.GetToolsResult().GetConfigValueByKey("Param");
+			var msgs = msg.split("@#");
+			if (msgs[0] == "1") {// 保存
+				// 视点名称
+				WegditViewName = msgs[1];
+				// 视点备注
+				WegditViewNote = msgs[2];
+				if(!WegditViewName){
+					alert("视点名称不能为空!");
+					return;
+				}
+				addView(WegditViewName, WegditViewNote);
+				HideWebDialog();
+			} else {// 取消或关闭
+				HideWebDialog();
+			}
 		}
 	}
 }
+
 /** **********************************************移动框********************************************* */
 function showWegdit(x, y) {
 	// 设置位置为当前屏幕中间

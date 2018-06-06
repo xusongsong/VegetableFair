@@ -7,9 +7,9 @@
 $(document).ready(function(){
 	delayInit();//初始化加载
 	//点击标注关闭传递参数到父页面
-	$("#cancelVideo").unbind('click').click(function(){
+/*	$("#cancelVideo").unbind('click').click(function(){
 		parent.cancelPreviewVideo();
-	});
+	});*/
 });
 
 /**
@@ -17,28 +17,35 @@ $(document).ready(function(){
  * @returns
  */
 function delayInit(){
- setTimeout(function () {
-        init();
-    }, 500);
+	setTimeout(function(){
+		videoInit();
+    }, 100);//这里设置延迟是为了正确加载OCX(取决于电脑性能,具体数值请根据实际情况设定,通常不需要修改 直接调用init()是可行的
     setTimeout(function () {
         $('#PlayViewOCX').css({
             'width': '100%',
             'height': '100%'
         });
         $('.pop').hide();
-    }, 4000);
+    }, 100);//这里设置延迟(数值请根据实际情况来)是防止快速刷新页面导致进程残留  具体清楚进程方式请参考<关闭进程 云台控制>demo中的代码
 }
 
 /**
  * 视频初始化
  * @returns
  */
-function init() {
+function videoInit() {
     var OCXobj = document.getElementById("PlayViewOCX");
     var txtInit = $("#config").val();
-    OCXobj.ContainOCX_Init(txtInit);
-    //默认播放视频
-    videoPlay();
+    if(typeof(OCXobj) == "undefined"){
+    	alert("OCXobj is undefined");
+    }
+    if(typeof(OCXobj.ContainOCX_Init) == "undefined"){
+    	alert("OCXobj.ContainOCX_Init is undefined");
+    }else{
+    	OCXobj.ContainOCX_Init(txtInit);
+    	//默认播放视频
+        videoPlay();
+    }
 }
 
 /**
@@ -49,6 +56,7 @@ function videoPlay() {
 	//调用父层级方法获取参数集
    	var videoParam = parent.getVideoParam();
    	if(videoParam == null){
+   		console.log("父层方法调用错误");
    		return;
    	}
    	//拼接参数信息

@@ -29,7 +29,7 @@ var OSGBServerNameByID = [];
  */
 function getOSGBList() {
 	// 仅第一次加载发送服务请求
-	if (fristOSGBListFlag) {
+	if (fristOSGBListFlag){
 		// 获取登录用户对应服务的服务名列表
 		var sname = getSnameArrayByType("osgb");
 		$.ajax({

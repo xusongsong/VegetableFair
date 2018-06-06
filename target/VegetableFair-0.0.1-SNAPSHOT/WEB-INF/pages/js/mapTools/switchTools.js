@@ -18,11 +18,6 @@ $(document).ready(function() {
 		AB();
 	});
     
-    /* 全幅功能  */
-	$(".btm_right_top_right_qf").unbind('click').click(function() {
-		fullWidth();
-	});
-	
 	/* 全幅功能  */
 	$(".btm_right_top_right_qf").unbind('click').click(function() {
 		fullWidth();
@@ -144,7 +139,9 @@ $(document).ready(function() {
 	//findLabelPoint(1);//页面加载时模拟执行搜索按键
 	
 	$(".bj_menu_ss_btn").unbind('click').click(function(){//点击搜索按钮进行标注列表搜索
-		findLabelPoint(1);
+		/**20180525-shine**/
+		getLabelList(1);
+		/**20180525-shine**/
 	});
 	
 	$(".tjbz_btn").unbind('click').click(function(){//点击添加标注按钮开启事件
@@ -159,6 +156,12 @@ $(document).ready(function() {
 	$(".btm_right_top_right_qc").unbind('click').click(function() {
 		/*清除map上新增的图层(属性查询,搜索详情等)*/
 		removeArrayLayers(mapShps);
+		//清除所有的标注图标点
+		/**20180525-shine**/
+		/*if(labelLayers != undefined && labelLayers !=null){
+			removeArrayLayers(labelLayers);
+		}*/
+		/**20180525-shine**/
 		var hideResult4Clear=document.getElementsByName('hideResult4Clear');
 		var showResult4Clear=document.getElementsByName('showResult4Clear');
 		var result4Clear=document.getElementsByName('result4Clear');
@@ -177,7 +180,8 @@ $(document).ready(function() {
 		
 		/*清除所有的菜博会建筑图标信息*/
 		deleteBuildFeature();
-		//loadBuildLayer();
+		/*清除所有的人脸摄像头要素*/
+		deleteFaceImageAll();
 		/*清除漫游模式*/
 		if (roamModeState == 0) {
 			roamMode("clearRoamMode");
@@ -187,9 +191,11 @@ $(document).ready(function() {
 		spaceClose();
 		
 		/*清除标注页面弹框*/
-		if(labelState == 0) {
+		/**20180525-shine**/
+		/*if(labelState == 0) {
 			canelLabelWegdit();
-		}
+		}*/
+		/**20180525-shine**/
 		/*清除地图工具高亮显示*/
 		$('.dtgj_top ul').removeClass('used_mapTools');
 		//取消标注拾取

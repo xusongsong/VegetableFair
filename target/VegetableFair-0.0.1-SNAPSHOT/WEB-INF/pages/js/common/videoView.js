@@ -35,13 +35,13 @@ function cancelPreviewVideo(){
 	$("#lockPlayFrame").css("display","none");
 }
 
-
 /**
  * 播放视频资源(以弹窗显示)
+ * @param count(窗口数)
  */
-function previewPopVideo(){
+function previewPopVideo(count){
 	 var videoParam = getVideoParam();
-	 var param = 'hikvideoclient://ReqType:' + videoParam.palyType + ';' + 'VersionTag:artemis' + ';' +  ';'+'WndCount: 1'+';'+'SvrIp:' + videoParam.SvrIp + ';' + 'SvrPort:' + videoParam.SvrPort + ';' + 'Appkey:' + videoParam.artemisAppKey + ';' + 'AppSecret:' + videoParam.appSecret + ';' + 'time:' + videoParam.time + ';' + 'timesecret:' + videoParam.timeSecret + ';' + 'httpsflag:' +  videoParam.httpsflag + ';' + 'CamList:' + videoParam.CamList + ';';
+	 var param = 'hikvideoclient://ReqType:' + videoParam.palyType + ';' + 'VersionTag:artemis' + ';' +  ';'+'WndCount:' + count + ';'+'SvrIp:' + videoParam.SvrIp + ';' + 'SvrPort:' + videoParam.SvrPort + ';' + 'Appkey:' + videoParam.artemisAppKey + ';' + 'AppSecret:' + videoParam.appSecret + ';' + 'time:' + videoParam.time + ';' + 'timesecret:' + videoParam.timeSecret + ';' + 'httpsflag:' +  videoParam.httpsflag + ';' + 'CamList:' + videoParam.CamList + ';';
      document.getElementById("previewPopVideo").src = param;
 }
 
@@ -53,8 +53,7 @@ function previewPopVideo(){
  * @param msg
  */
 function FireOnResponserNotifAll(){
-	function VPSDKCtrl::FireOnResponserNotify(str,id)
-	{	
+	function VPSDKCtrl::FireOnResponserNotify(str,id){
 		//拾取事件
 		if(str == "PickVectorResponser"){
 			//根据获取的别名字符进行判断
@@ -66,6 +65,14 @@ function FireOnResponserNotifAll(){
 			case '2'://门禁拾取
 				lockPickEvent();
 				break;
+			case '3'://人脸设备拾取
+				facePickEvent();
+				break;
+			/**20180525**/
+			case '4'://标注拾取事件
+				labelPickEvent();
+				break;
+			/**20180525**/
 			default:
 				break;
 			
@@ -73,25 +80,31 @@ function FireOnResponserNotifAll(){
 		}
 		//页面弹窗事件
 		if(str == "TipsDialogResponser"){//若皆属于事件弹窗事件但未拾取的情况下，可以自定义全局变量名称进行评定条件
-			if(vectorPickLayer){
-				var ename = map3D.getLabelValue(vectorPickLayer).ename;
-			}
-			switch(ename){
-			case '1'://拾取视频图标的弹窗交互事件
+			
+			switch(notifyState){//自定义的参数值，用于判定弹窗事件，为了便于查看，自定义名称取方法名称
+			case 'videoPickEvent'://拾取视频图标的弹窗交互事件
 				integerActive();
 				break;
-			case '2':
+			case 'lockPickEvent':
 				lockIntegerActive();
 				break;
-			default:
+			case 'facePickEvent'://人脸设备触发事件
+				faceIntegerActive();
 				break;
-			
-			}
-			//当弹窗不经过拾取生成自定义生成并可能存在多次触发时，
-			switch(notifyState){//自定义的参数值，用于判定弹窗事件，为了便于查看，自定义名称取方法名称
 			case 'startAddLabel':
-				saveLabelWegdit();
+				saveLabelWegdit();//保存标注弹窗
 				break;
+			case 'flyAlarmPosition':
+				faceAlarmActive();//人脸预警弹窗
+				break;
+			/**20180525**/
+			case 'addLabelEvent':
+				labelAddIntegerEvent();//标注添加弹窗响应事件
+				break;
+			case 'labelPickEvent':
+				labelAttributeIntegerEvent();//标注属性弹窗响应事件
+				break;
+			/**20180525**/
 			default:
 				break;
 			}
@@ -131,7 +144,14 @@ function FireOnLayerNotifyAll(){
 			loadLineAim(layerid,type);
 			break;
 		case "dynamicpath"://视频巡更
-			videoPatrolEvent();
+			switch(notifyLayerState){//自定义的参数值，用于判定弹窗事件，为了便于查看，自定义名称取方法名称
+			case 'playPatrol'://拾取视频图标的弹窗交互事件
+				videoPatrolEvent();
+				//zoneAnalysis();
+				break;
+			default:
+				break;
+			}
 			break;
 		default:
 			break;
@@ -158,10 +178,11 @@ function videoPickEvent(){
 	    var videoImageValueArr = map3D.getLabelValue(vectorPickLayer).imageValue.split(",");
 	    //拼接参数信息
 	    var videoImageUrl = videoResourceUrl + "?indexCode=" + videoImageValueArr[0] + 
-	    "&name=" + videoImageValueArr[1]+ "&pixel=" + videoImageValueArr[2]+ 
-	    "&createTime=" + videoImageValueArr[3]+"&longitude=" + pos[0]+ "&latitude=" + pos[1];
+	    "&name=" + encodeURIComponent(videoImageValueArr[1])+ "&pixel=" + videoImageValueArr[2] + 
+	    "&createTime=" + encodeURIComponent(videoImageValueArr[3])+"&longitude=" + pos[0]+ "&latitude=" + pos[1];
 	    //拾取图片标注生成弹窗
 	    loadVideoDialog(pos,videoImageUrl,videoImageValueArr[0]);
+	    notifyState = "videoPickEvent";
 	    integerActive();//开启弹窗响应事件
 }
 
@@ -170,23 +191,76 @@ function videoPickEvent(){
  * @returns
  */
 function integerActive(){
-		//SDK获取页面里面传递出来的参数的方法
-		var msg = webRespSG.GetResponserResult().GetConfigValueByKey("Param");
-		var msgs = msg.split('@#');
-		//获取触发事件的状态值，若触发事件是预览事件，则执行预览方法	
-		if(msgs[0] == "1"){
-			//获取当前的播放的摄像头编号值
-			realIndexCode = msgs[1];
-			//播放弹窗视频
-			previewPopVideo();
-			//播放嵌入视频
-			previewImplantVideo();
-			//关闭页面弹窗
-			cancelVideoWegdit();
-		}else if(msgs[0] == "0"){
-			cancelVideoWegdit();
-		}
+	//SDK获取页面里面传递出来的参数的方法
+	var msg = webRespSG.GetResponserResult().GetConfigValueByKey("Param");
+	var msgs = msg.split('@#');
+	//获取触发事件的状态值，若触发事件是预览事件，则执行预览方法
+	if(msgs[0] == "1"){
+		//获取当前的播放的摄像头编号值
+		realIndexCode = msgs[1];
+		//播放弹窗视频
+		//previewPopVideo(1);
+		//播放嵌入视频
+		previewImplantVideo();
+		//关闭页面弹窗
+		cancelVideoWegdit();
+	}else if(msgs[0] == "0"){
+		cancelVideoWegdit();
+	}
 }
+
+/**
+ * 人脸设备相机拾取触发事件
+ */
+function facePickEvent(){
+	//获取拾取图片标注点坐标
+    var pos = map3D.getLabelValue(vectorPickLayer).points.split(',');
+    var faceImageValueArr = map3D.getLabelValue(vectorPickLayer).imageValue.split(",");
+    //拼接参数信息
+    var faceWebUrlParam = faceWebUrl + "?indexCode=" + faceImageValueArr[0] + 
+    "&name=" + faceImageValueArr[1]+ "&pixel=" + faceImageValueArr[2]+ 
+    "&createTime=" + faceImageValueArr[3]+"&longitude=" + pos[0]+ "&latitude=" + pos[1];
+    //拾取图片标注生成弹窗
+    loadFaceDialog(pos,faceWebUrlParam);
+    notifyState = "facePickEvent";
+    faceIntegerActive();//开启弹窗响应事件
+}
+
+/**
+ * 设备弹窗交互事件
+ */
+function faceIntegerActive(){
+	//SDK获取页面里面传递出来的参数的方法
+	var msg = faceWebResp.GetResponserResult().GetConfigValueByKey("Param");
+	var msgs = msg.split('@#');
+	//获取触发事件的状态值，若触发事件是预览事件，则执行预览方法	
+	if(msgs[0] == "1"){
+		//获取当前的播放的摄像头编号值
+		realIndexCode = msgs[1];
+		//播放弹窗视频
+		previewPopVideo(1);
+		//关闭页面弹窗
+		cancelVideoWegdit();
+	}else if(msgs[0] == "0"){
+		cancelFaceDialog();
+	}
+}
+
+/**
+ * 设备预警弹窗交互事件
+ */
+function faceAlarmActive(){
+	//SDK获取页面里面传递出来的参数的方法
+	var msg = faceDetailResp.GetResponserResult().GetConfigValueByKey("Param");
+	var msgs = msg.split('@#');
+	//获取触发事件的状态值，若触发事件是预览事件，则执行预览方法	
+	if(msgs[0] == "0"){
+		//判断当前关闭的弹窗id
+		var id = msgs[0];
+		cancelFaceDetailDialog(msgs[1]);
+	}
+}
+
 
 /**
  * 门禁拾取响应事件
@@ -211,6 +285,7 @@ function lockPickEvent(){
 	var lockPickUrl = lockPickStateUrl + "?lockId=" +pickDoorId +
 	"&name=" +  name + "&pickDoor=" + pickDoor;
     createLockDialog(pos,lockPickUrl);
+    notifyState = "lockPickEvent";
     lockIntegerActive();
 }
 
@@ -262,7 +337,49 @@ function imageEvent(){
 } 
 
 /**
- * 视频巡更监听事件
+ * 视频巡更监听事件(可作为模板参照)
+ */
+function videoPatrolEvent1(){
+	var patrolAddLayer = patrolAddLayers[playVideoId];
+	if(patrolAddLayer == null || patrolAddLayer == undefined){
+		return;
+	}
+	var opt = patrolAddLayer.GetLayerResult();//获取图层结果集
+	var val = opt.GetConfigValueByKey("RealTimePosition");//获取实时位置
+	if(PositionArray == null || PositionArray == undefined){
+		return;
+	}
+     //循环遍历关键节点信息数组
+     for(var i = 0; i < PositionArray.length; i++){
+     	//判断当前所经过的节点是否与关键节点相交
+     	if(map3D.CalcBuffer(val,KeyPositionArray[i]) && i < PositionArray.length){
+     		//在关键点求交过程中，一个关键点只匹配一次
+     		for(var j = 0; j < keyPatrolReadyArr.length; j++){
+     			if(KeyPositionArray[i] == keyPatrolReadyArr[j]){
+     				return;
+     			}
+     		}
+     		keyPatrolReadyArr.push(KeyPositionArray[i]);
+			//若到了最后一个节点则
+     		if(i >= PositionArray.length - 1){
+					alert(PositionArray[i]);//获取的是最后一个点的坐标值
+					alert("最后转角点"+(i));
+					// 路径播放样式改变
+					$("#play_" + playVideoId).css("background", "url(../img/bf.png)");
+					$("#play_" + playVideoId).val(0);
+					 notifyLayerState = null;//关闭当前巡更事件
+					return;
+				}else{
+					alert(PositionArray[i]);//获取的是除最后一个点的其他坐标
+					alert("转角点"+(i));
+					return;
+				}
+			}
+     }
+ }
+
+/**
+ * 动态视频巡更监听事件(结合视频播放)
  */
 function videoPatrolEvent(){
 	var patrolAddLayer = patrolAddLayers[playVideoId];
@@ -271,22 +388,141 @@ function videoPatrolEvent(){
 	}
 	var opt = patrolAddLayer.GetLayerResult();//获取图层结果集
 	var val = opt.GetConfigValueByKey("RealTimePosition");//获取实时位置
-     //循环遍历关键节点信息数组
+	var valArr = val.split(",");
+	var realVal =  map3D.coordTransformation(2,{posX:valArr[0],posY:valArr[1],posZ:valArr[2]});//坐标转换(场景坐标转经纬度坐标)
+	//var realVal = valArr[0] + "," + valArr[1] + "," + videoHeight;//重置实时坐标点的高度值(因为视频监控高度值固定)
+	if(PositionArray == null || PositionArray == undefined){
+		return;
+	}
+	//遍历摄像头数组对象,将其与实时点坐标进行匹配
+	for(var k = 0; k < videoPatrolArr.length; k++){
+	   	 var arr = videoPatrolArr[k].split(",");
+	   	 var targetPosi = arr[0] + "," + arr[1] + "," + arr[2];
+	   	 var indexCode = arr[3];
+	   	 var name = arr[4];
+	   	 //判断实时点坐标与摄像头坐标是否符合相交条件
+	   	 if(checkPosiSG(realVal,videoPatrolArr[k])){
+			var realArr = [];
+			videoPreviewPatrols.push(indexCode);
+			var count = 0;
+			//循环判断当前indexCode值是否值出现一次
+			for(var i = 0; i < videoPreviewPatrols.length; i++){
+				if(videoPreviewPatrols[i] == indexCode){
+					count++;
+				}
+			}
+			//若只出现一次则开始播放视频
+			if(count <= 1){
+				realArr.push(indexCode);
+				//视频巡更播放中弹出第一个点位信息时会发生卡顿,由于访问秘钥接口时间过长(初始化秘钥接口，分页查询时刷新秘钥)
+				/*var videoParam = videoPatrolPraram;
+				videoParam.CamList = realArr;
+				var param = 'hikvideoclient://ReqType:' + videoParam.palyType + ';' + 'VersionTag:artemis' + ';' +  ';'+'WndCount:' + 4 + ';'+'SvrIp:' + videoParam.SvrIp + ';' + 'SvrPort:' + videoParam.SvrPort + ';' + 'Appkey:' + videoParam.artemisAppKey + ';' + 'AppSecret:' + videoParam.appSecret + ';' + 'time:' + videoParam.time + ';' + 'timesecret:' + videoParam.timeSecret + ';' + 'httpsflag:' +  videoParam.httpsflag + ';' + 'CamList:' + videoParam.CamList + ';';
+				document.getElementById("previewPopVideo").src = param;*/
+				//window.location.href = param;
+				previewAllPopVideo(9,realArr);
+	 			count = 0;
+	 			//当遇到监控点位时暂停前行，播放监控点视频
+	 			patrolOpeart("paush_"+playVideoId);
+			}
+		}
+	}
+     //循环遍历关键节点信息数组(以下方法是为了当视频播放到关键点位时所进行的逻辑判断)
      for(var i = 0; i < PositionArray.length; i++){
      	//判断当前所经过的节点是否与关键节点相交
      	if(map3D.CalcBuffer(val,KeyPositionArray[i]) && i < PositionArray.length){
-				//若到了最后一个节点则
+     		//在关键点求交过程中，一个关键点只匹配一次
+     		for(var j = 0; j < keyPatrolReadyArr.length; j++){
+     			if(KeyPositionArray[i] == keyPatrolReadyArr[j]){
+     				return;
+     			}
+     		}
+     		//若该关键点与实时点未发生交集则
+     		keyPatrolReadyArr.push(KeyPositionArray[i]);
+			//若到了最后一个节点则
      		if(i >= PositionArray.length - 1){
-					alert(PositionArray[i-1]);//获取的是最后一个点的坐标值
-					alert("最后转角点"+(i-1));
+					//alert(PositionArray[i]);//获取的是最后一个点的坐标值
+					//alert("最后转角点"+(i));
 					// 路径播放样式改变
 					$("#play_" + playVideoId).css("background", "url(../img/bf.png)");
 					$("#play_" + playVideoId).val(0);
+					//重置求交数组
+				    keyPatrolReadyArr = [];
+				    //重置视频播放数组
+				    videoPreviewPatrols = [];
+					notifyLayerState = null;//关闭当前巡更事件
+					return;
 				}else{
-					alert(PositionArray[i-1]);//获取的是除最后一个点的其他坐标
-					alert("转角点"+(i-1));
+					return;
 				}
 			}
      }
  }
 
+
+/**
+ * 初始化调整UI位置信息
+ */
+function trimReady(){
+	//初始化调整人脸识别列表信息(确定高度，使用下拉条)
+	$(".sbjg").css("height",document.body.clientHeight - 80 - 24 + "px");
+}
+
+/**
+ * 初始化创建所有图层
+ */
+function createAllLayer(){
+	//创建图片要素图层(初始化的时候创建只创建一次)
+	createVideoImageLayer();
+	//创建人脸图层(初始化的时候创建只创建一次)
+	createFaceImage();
+	//创建所有文字标注图层(初始化的时候创建只创建一次)
+	createBuildLayer();
+	//初始化创建预警图层
+	createAlarmGif();
+	/**20180525**/
+	//创建标注图片图层
+	createLabelImageLayer();
+	//创建文字标注图层
+	createLabelTextLayer();
+	/**20180525**/
+}
+
+/**
+ * 初始化加载所有初始化事件(根据现场需求)
+ */
+function loadSGByReady(){
+	//初始化加载倾斜摄影
+	getOSGBList();
+	showOrhiddenOSGB(1342);
+	//初始化加载多进程响应事件
+	startNotifyEvent();
+	//初始化创建所有图层
+	createAllLayer();
+	//初始化加载菜博会建筑文字标识图层
+	loadBuildLayer();
+	//查询所有抓拍机列表(根据预警信息值反查抓拍机经纬)
+	//getPosePicture(1);
+	//初始化默认展开资源列表
+	showVideoListReady();
+	//初始化开启拾取事件(拾取事件的开启需要建立在图层创建的前提下,勿将方法置反)
+	videoPickUp();
+	//初始化加载模型
+	//loadModelReady();
+	//初始化获取所有菜博会监控点位坐标数组
+	//getVideoPosition();
+	//初始加载一次运用IE缓存机制再次获取秘钥时不会发生卡顿(会延迟5-6秒时间初始化时)
+	getVideoParam();
+	//初始化加载全部标注点
+	getLabelList(1);
+}
+
+/**
+ * 初始化控制地图图层显示(根据现场需求)
+ */
+function loadModelReady(){
+	for(var i = 0; i < modelLevelInfo.length; i++){
+		var id = modelLevelInfo[i].layerID + "#@false";//存在特殊字符#导致juqery id 选择器失效
+		document.getElementById(id).click();
+	}
+}

@@ -107,6 +107,11 @@ function searchSubmit(pageNo) {
 						left : '71px'
 					}, 100);
 					$('.btm_left_menu .zh_k').hide();
+					
+					//20180406修改
+					$("#videoFourDialog").css("left",71 + 8 + "px");
+					//20180406修改
+					
 					$(".btm_right_top_left_xy span").removeClass("btm_right_top_left_xy_dx1");
 					$('#maptoolCityFrame').animate({
 						left : '71px'
