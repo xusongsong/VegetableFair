@@ -94,18 +94,18 @@
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-    <property name="dataSource" ref="dataSource" />
-    <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
-    <property name="mapperLocations" value="classpath*:mybatis/${jdbc.datatype}/*.xml"></property>
+	    <property name="dataSource" ref="dataSource" />
+	    <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"></property>
+	    <property name="mapperLocations" value="classpath*:mybatis/${jdbc.datatype}/*.xml"></property>
     </bean>
-
+	
     <!--<context:annotation-config></context:annotation-config>-->
     <!--<context:component-scan base-package="com.coorun"></context:component-scan>-->
-
+	
     <bean id="hikDatasource" class="com.coorun.faceidentifymanage.dao.HikDatasource">
         <property name="host" value="${artemisHost}" />
         <property name="appKey" value="${artemisAppKey}" />
         <property name="appSecret" value="${artemisAppSecret}" />
     </bean>
-
+	
 </beans>

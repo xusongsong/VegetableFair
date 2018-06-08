@@ -558,14 +558,12 @@ $(document)
 					// $('.bzxg_menu_sd').show();
 					// });
 
-					$('#ljgl').click(
-							function() {
+					$('#ljgl').click(function(){
 								findPowerPath(1);
 								$('.gl_menu').hide().eq(1).show();
 								$('.btm_left_menu .zh_k').hide().eq(13).show();
 								$('.bjgl_menu_qh span').removeClass();
-								$('.bjgl_menu_qh span').eq(1).addClass(
-										'bjgl_menu_qh_kgfx');
+								$('.bjgl_menu_qh span').eq(1).addClass('bjgl_menu_qh_kgfx');
 							});
 					$('#bjgl').click(
 							function() {

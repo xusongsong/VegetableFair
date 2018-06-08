@@ -6,6 +6,11 @@
 	<packaging>war</packaging>
 
 	<properties>
+		<!-- 文件拷贝时的编码 -->  
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
+        <!-- 编译时的编码 -->  
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
 		<spring.version>4.3.10.RELEASE</spring.version>
 		<mybatis.version>3.4.5</mybatis.version>
 		<jstl-version>1.2</jstl-version>

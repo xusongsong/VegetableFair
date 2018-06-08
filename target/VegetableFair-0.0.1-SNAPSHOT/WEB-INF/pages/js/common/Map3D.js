@@ -384,7 +384,7 @@ var Map3D = OM.Class.extend({
             // 往返播放"PLAYER_ROUND_LOOP"
             tlo.AddConfig("PlayerState", "PLAYER_STOP"); // 播放状态
             // 有播放"PLAYER_PLAY"、暂停"PLAYER_PAUSE"、停止"PLAYER_STOP"
-            tlo.AddConfig("ViewObjectMode", distance); // 路径观察视角，格式为"1.57,-0.708,100",第一个为视角方位角，第二个为视角俯仰角，第三个为视点到关键点距离
+            tlo.AddConfig("ViewObjectMode","0,-0.708," + distance); // 路径观察视角，格式为"1.57,-0.708,100",第一个为视角方位角，第二个为视角俯仰角，第三个为视点到关键点距离
             tlo.AddConfig("Velocity", speed); // 速度 单位m/s
             tlo.AddConfig("LineWidth", "2.0"); // 线宽
             tlo.AddConfig("LineStipple", "65535"); // 线样式
@@ -399,7 +399,7 @@ var Map3D = OM.Class.extend({
             dynamicPathLayer.AddObserver();
             return dynamicPathLayer;
         },
-        "playRoamPath" : function(layer) { // 播放路径
+        "playRoamPath" : function(layer){ // 播放路径
             if (layer == null || layer == undefined) {
                 return;
             }

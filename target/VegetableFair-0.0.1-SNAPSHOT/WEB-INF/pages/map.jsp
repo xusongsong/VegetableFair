@@ -103,13 +103,20 @@
 <%-- <script src="${ctx }/om/videoResource/videoMonitor.js"></script> --%>
 <%-- <script src="${ctx }/om/videoResource/lockControl.js"></script> --%>
 <script src="${ctx }om/videoResource/labelMonitor.js"></script>
-<script src="${ctx }/om/SG/videoMonitor.js"></script> 
-<script src="${ctx }/om/SG/videoPatrol.js"></script> 
-<script src="${ctx }/om/SG/personFace.js"></script> 
-<script src="${ctx }/om/SG/zdxg.js"></script> 
+
+<script src="${ctx }/om/AJ/videoMonitor.js"></script> 
+<script src="${ctx }/om/AJ/videoPatrol.js"></script> 
+<script src="${ctx }/om/AJ/personFace.js"></script> 
+<script src="${ctx }/om/AJ/zdxg.js"></script> 
+
+<%-- <script src="${ctx }/om/SG/videoMonitor.js"></script> --%>
+<%-- <script src="${ctx }/om/SG/videoPatrol.js"></script> --%>
+<%-- <script src="${ctx }/om/SG/personFace.js"></script> --%>
+<%-- <script src="${ctx }/om/SG/zdxg.js"></script>  --%>
+
 <script type='text/javascript' src='${ctx }dwr/engine.js'></script>
 <script type='text/javascript' src='${ctx }dwr/util.js'></script>
-	<!-- <script src="../om/middleWare/ArcGISLayerTab.js"></script> -->
+<!-- <script src="../om/middleWare/ArcGISLayerTab.js"></script> -->
 </head>
 <body onload="init();dwr.engine.setActiveReverseAjax(true);dwr.engine.setNotifyServerOnPageUnload(true);">
 	<div class="OMmap_top">
@@ -119,7 +126,7 @@
 		<ul class="OMmap_top_logo">
 			<li class="OMmap_top_logo_c">
 				<img src="../img/logo.png">
-				<span><strong>山东寿光三维公安警用系统</strong></span>
+				<span><strong>浙江安吉新闻集团展厅系统</strong></span>
 			</li>
 		</ul>
 	</div>
@@ -152,6 +159,7 @@
 							<span>视频投影</span>
 						</ul>
 					</div>
+					<!-- 
 					<div>
 						<ul class="k9">
 							<span class="k3_pic"><img src="../img/rkgl1.png"></span>
@@ -162,6 +170,7 @@
 							<span>人脸识别</span>
 						</ul>
 					</div>
+					 -->
 					<!-- <div>
 					<ul class="k3">
 						<span class="k3_pic"><img src="../img/aftc1.png"></span>
@@ -299,6 +308,8 @@
 					<span class="ghss_an" onclick = "findPatroList(1);"></span>
 				</div>
 				<div class="lj_bcqc1">
+					<span class="lj_bcqc_tj" onclick="fireRecordPatrol();">消防路线绘制</span>
+					<span class="lj_bcqc_tj" onclick="addFirePatrol();">消防路线保存</span>
 					<span class="lj_bcqc_tj" onclick="recordPatrol();">绘制</span>
 					<span class="lj_bcqc_bc" onclick="addPatrol();">保存</span>
 					<span class="lj_bcqc_ss" onclick="cleanPatrol();">清除</span>
@@ -1400,41 +1411,6 @@
 				</div>
 				<div class="sdsc_lb">
 				
-					<!-- <ul class="map_dttc_qxsy">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj" id="sdxg"></span>
-					</ul>
-					<ul class="map_dttc_qxsy" style="margin-top: 30px;">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj"></span>
-					</ul>
-					<ul class="map_dttc_qxsy" style="margin-top: 30px;">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj"></span>
-					</ul>
-					<ul class="map_dttc_qxsy" style="margin-top: 30px;">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj"></span>
-					</ul>
-					<ul class="map_dttc_qxsy" style="margin-top: 30px;">
-						<span class="map_dttc_qxsy_xh"> <span class="fh">1</span>
-						</span>
-						<span>钱江新城</span>
-						<span class="sdsc_sc"></span>
-						<span class="sdsc_bj"></span>
-					</ul> -->
 				</div>
 			</li>
 			<li class="zh_k">

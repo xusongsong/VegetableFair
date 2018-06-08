@@ -4,5 +4,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "classpath:mybatis-3-config.dtd">
 
 <configuration>
-	
+	<typeAliases>
+		<package name="com.coorun.dao"/>
+	</typeAliases>
 </configuration>

@@ -1,7 +1,7 @@
 .form {
     width: 300px;
-    position: absolute;
-    left: 500px;
+    /* position: absolute; */
+    left: 100px;
     top: 50px;
 }
 input.submit {

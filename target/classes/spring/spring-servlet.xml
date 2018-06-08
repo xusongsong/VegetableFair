@@ -49,7 +49,7 @@
 	    <property name="prefix" value="/WEB-INF/pages/"/>
 	    <property name="suffix" value=".jsp"/>
 	</bean>
-
+	
 	<!-- AOP日志管理 -->
 	<!-- <bean id="logBean" class="com.coorun.aop.SysLog"></bean>
     <aop:config>
@@ -58,5 +58,5 @@
     		<aop:after-throwing method="dealWithLog" pointcut-ref="pointCut" throwing="e"/>
     	</aop:aspect>
     </aop:config> -->
-
+	
 </beans>

@@ -5,6 +5,20 @@
      * @creatDate 2017-09-25
      */
 
+	/*
+	 *onclick="sceneManager('
+	 *playPath
+	 *_
+	 *113
+	 *_
+	 *120.537472193,31.8576651925,5.02341533452;120.537853236,31.8583135342,4.90961246006;
+	 * _
+	 * 3.870133974092558,-0.46405084999561,44.33239886139856
+	 * 
+	 * */
+	
+
+
     /**
      * 场景管理(播放、暂停、停止)
      *
@@ -416,7 +430,8 @@
      */
     function addPath(lnglats,viewModel) {
         var str = '';
-        var strArray = viewModel.split("|");
+        //旋转角,俯仰角,视野距离
+        var strArray = viewModel.split(",");
         for(var i =0;i<strArray.length;i++){
             if(i==0){
                 str += strArray[i];
@@ -424,7 +439,8 @@
                 str += (","+strArray[i]);
             }
         }
-        dynamicPathLayer = map3D.addRoamPath(lnglats,str,10);// API
+        //3.870133974092558,-0.46405084999561,44.33239886139856
+        dynamicPathLayer = map3D.addRoamPath(lnglats,strArray[2],10);// API
     //    dynamicPathLayer = map3D.addRoamPathOld(lnglats,str,true);
     }
     var playState = 0;
@@ -437,12 +453,13 @@
      * @param viewModel,视角参数
      */
     function play(id,lnglats,viewModel){
-        if(playArray[id]==undefined){
+    	var length = playArray.length;
+        if(playArray[id] == undefined){
             addPath(lnglats,viewModel);
             playArray[id] = dynamicPathLayer;
         }
         map3D.playRoamPath(playArray[id]);// API
-    //    map3D.playRoamPathOld(playArray[id],10);
+    //  map3D.playRoamPathOld(playArray[id],10);
     }
     /**
      * 暂停

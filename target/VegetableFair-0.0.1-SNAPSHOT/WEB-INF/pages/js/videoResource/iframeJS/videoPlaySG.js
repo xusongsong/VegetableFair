@@ -7,9 +7,9 @@
 $(document).ready(function(){
 	delayInit();//初始化加载
 	//点击标注关闭传递参数到父页面
-/*	$("#cancelVideo").unbind('click').click(function(){
+	$("#cancelVideo").unbind('click').click(function(){
 		parent.cancelPreviewVideo();
-	});*/
+	});
 });
 
 /**
@@ -19,7 +19,7 @@ $(document).ready(function(){
 function delayInit(){
 	setTimeout(function(){
 		videoInit();
-    }, 100);//这里设置延迟是为了正确加载OCX(取决于电脑性能,具体数值请根据实际情况设定,通常不需要修改 直接调用init()是可行的
+    }, 500);//这里设置延迟是为了正确加载OCX(取决于电脑性能,具体数值请根据实际情况设定,通常不需要修改 直接调用init()是可行的
     setTimeout(function () {
         $('#PlayViewOCX').css({
             'width': '100%',
@@ -36,16 +36,9 @@ function delayInit(){
 function videoInit() {
     var OCXobj = document.getElementById("PlayViewOCX");
     var txtInit = $("#config").val();
-    if(typeof(OCXobj) == "undefined"){
-    	alert("OCXobj is undefined");
-    }
-    if(typeof(OCXobj.ContainOCX_Init) == "undefined"){
-    	alert("OCXobj.ContainOCX_Init is undefined");
-    }else{
-    	OCXobj.ContainOCX_Init(txtInit);
-    	//默认播放视频
-        videoPlay();
-    }
+    //OCXobj.ContainOCX_Init(txtInit);
+    //默认播放视频
+    videoPlay();
 }
 
 /**
@@ -56,11 +49,12 @@ function videoPlay() {
 	//调用父层级方法获取参数集
    	var videoParam = parent.getVideoParam();
    	if(videoParam == null){
-   		console.log("父层方法调用错误");
+   		alert("父层方法调用错误");
    		return;
    	}
    	//拼接参数信息
     var param = 'ReqType:' + videoParam.palyType + ';' + 'SvrIp:' + videoParam.SvrIp + ';'+'WndCount: 1'+';' + 'SvrPort:' + videoParam.SvrPort + ';' + 'Appkey:' + videoParam.artemisAppKey + ';' + 'AppSecret:' + videoParam.appSecret + ';' + 'time:' + videoParam.time + ';' + 'timesecret:' + videoParam.timeSecret + ';' + 'httpsflag:' + videoParam.httpsflag + ';' + 'CamList:' + videoParam.CamList + ';';
+    console.log(param);
     //调用OCX视频处理函数
     play_ocx_do(param);
 };
@@ -81,7 +75,6 @@ function previewPopVideo(){
 function closeVideo() {
     var param = 'hikvideoclient://VersionTag:artemis;Exit:1;';
     play_ocx_do(param);
-
 };
 
 /**
@@ -93,8 +86,7 @@ function play_ocx_do(param) {
     if ("null" == param || "" == param || null == param || "undefined" == typeof param) {
         return;
     } else {
-        var OCXobj = document.getElementById("PlayViewOCX");
-        //调用底层OCX方法播放视频
+    	var OCXobj = document.getElementById("PlayViewOCX");
         OCXobj.ContainOCX_Do(param);
     }
 }

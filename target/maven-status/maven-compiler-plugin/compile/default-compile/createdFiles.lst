@@ -61,6 +61,7 @@ com\coorun\factory\MapFactory.class
 com\coorun\faceidentifymanage\entity\AlarmHumanBo.class
 com\coorun\services\impl\MapSearcherServiceImpl.class
 com\coorun\faceidentifymanage\services\impl\LiveDataServiceImpl.class
+com\coorun\web\MapToolsControllerAJ.class
 com\coorun\services\impl\SceneManagerServiceImpl.class
 com\coorun\icgis\population\statistics\model\SexSum.class
 com\coorun\faceidentifymanage\util\ResultUtil.class
@@ -126,6 +127,7 @@ com\coorun\faceidentifymanage\entity\FaceEntity$Glass.class
 com\coorun\faceidentifymanage\services\impl\DefenceServiceImpl.class
 com\coorun\icgis\jites\common\validator\Validator$2.class
 com\coorun\faceidentifymanage\services\StaticListService.class
+com\coorun\dao\IMapToolsDao.class
 com\coorun\factory\SecurityManageFactory.class
 com\coorun\faceidentifymanage\services\DataCaptureService.class
 com\coorun\faceidentifymanage\entity\FaceEntity$RecommendFaceRect.class
@@ -185,6 +187,7 @@ com\coorun\icgis\jites\common\validator\Validator$12.class
 com\coorun\aop\SysLog.class
 com\coorun\faceidentifymanage\entity\FaceEntity$EyesPosition.class
 com\coorun\entity\AttributeResult.class
+com\coorun\services\IMapToolsService.class
 com\coorun\om\base\util\PageTag.class
 com\coorun\faceidentifymanage\services\impl\ListLibServiceImpl.class
 com\coorun\entity\LabelResult.class
@@ -215,6 +218,7 @@ com\coorun\faceidentifymanage\dao\HikDatasource.class
 com\coorun\faceidentifymanage\services\AbstractService.class
 com\coorun\faceidentifymanage\web\BlackListController.class
 com\coorun\faceidentifymanage\mq\realtimemessage\SnapshotPushCallback$1.class
+com\coorun\services\impl\MapToolsServiceImpl.class
 com\coorun\om\base\services\IBaseService.class
 com\coorun\icgis\jites\geodo\api\bean\NameValuedArrayInfo.class
 com\coorun\icgis\vehicle\device\service\IVehicleDeviceService.class

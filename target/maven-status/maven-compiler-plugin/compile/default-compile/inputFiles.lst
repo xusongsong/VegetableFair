@@ -82,6 +82,7 @@ E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\geo
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\entity\SnapshotPushCallbackEntity.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\vo\StatisticsCensusVO.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\PlanServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\dao\IMapToolsDao.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\SceneManagerService.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\health\model\LineChatResponse.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\web\LayerManagerController.java
@@ -109,6 +110,7 @@ E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\Attribut
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\MapSearcherServiceImpl.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\DefenceService.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\inquire\service\impl\PopulationInquireServiceImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\web\MapToolsControllerAJ.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\vehicle\api\client\VehicleClient.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\inquire\controller\PopulationInquireController.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\vehicle\device\controller\VehicleDeviceController.java
@@ -147,6 +149,7 @@ E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\com
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\web\StaticListController.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\health\model\NameDataArray.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\model\PoliticalSum.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\impl\MapToolsServiceImpl.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\entity\MapResult.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\LiveDataServiceImpl.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\LayerService.java
@@ -191,6 +194,7 @@ E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\populatio
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\population\statistics\service\impl\PopulationStatisticsServiceImpl.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\access\controller\SecurityAccessController.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\jites\common\aop\impl\ControllerIcgisAspectImpl.java
+E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\services\IMapToolsService.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\impl\ListLibServiceImpl.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\faceidentifymanage\services\ListLibService.java
 E:\安吉新闻\VegetableFair\VegetableFair\src\main\java\com\coorun\icgis\security\wifi\service\impl\SecurityWifiServiceImpl.java
