@@ -103,13 +103,20 @@
 <%-- <script src="${ctx }/om/videoResource/videoMonitor.js"></script> --%>
 <%-- <script src="${ctx }/om/videoResource/lockControl.js"></script> --%>
 <script src="${ctx }om/videoResource/labelMonitor.js"></script>
+
 <script src="${ctx }/om/AJ/videoMonitor.js"></script> 
 <script src="${ctx }/om/AJ/videoPatrol.js"></script> 
 <script src="${ctx }/om/AJ/personFace.js"></script> 
 <script src="${ctx }/om/AJ/zdxg.js"></script> 
+
+<%-- <script src="${ctx }/om/SG/videoMonitor.js"></script> --%>
+<%-- <script src="${ctx }/om/SG/videoPatrol.js"></script> --%>
+<%-- <script src="${ctx }/om/SG/personFace.js"></script> --%>
+<%-- <script src="${ctx }/om/SG/zdxg.js"></script>  --%>
+
 <script type='text/javascript' src='${ctx }dwr/engine.js'></script>
 <script type='text/javascript' src='${ctx }dwr/util.js'></script>
-	<!-- <script src="../om/middleWare/ArcGISLayerTab.js"></script> -->
+<!-- <script src="../om/middleWare/ArcGISLayerTab.js"></script> -->
 </head>
 <body onload="init();dwr.engine.setActiveReverseAjax(true);dwr.engine.setNotifyServerOnPageUnload(true);">
 	<div class="OMmap_top">
@@ -301,6 +308,8 @@
 					<span class="ghss_an" onclick = "findPatroList(1);"></span>
 				</div>
 				<div class="lj_bcqc1">
+					<span class="lj_bcqc_tj" onclick="fireRecordPatrol();">消防路线绘制</span>
+					<span class="lj_bcqc_tj" onclick="addFirePatrol();">消防路线保存</span>
 					<span class="lj_bcqc_tj" onclick="recordPatrol();">绘制</span>
 					<span class="lj_bcqc_bc" onclick="addPatrol();">保存</span>
 					<span class="lj_bcqc_ss" onclick="cleanPatrol();">清除</span>

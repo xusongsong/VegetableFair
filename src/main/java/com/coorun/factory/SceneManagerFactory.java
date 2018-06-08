@@ -521,6 +521,8 @@ public class SceneManagerFactory {
 			return null;
 		}
 		result4Server = result4Server.substring(firstIndex + 1, lastIndex);
+		
+		
 		// 把预处理结果转换成json格式数据
 		JSONObject jsonObject = JSON.parseObject(result4Server);
 		return jsonObject;

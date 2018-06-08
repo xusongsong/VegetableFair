@@ -51,7 +51,7 @@ public class ArtemisFactory {
 			//状态值判定
 			if(stateNum.equals(jsonObject.getString("code"))){
 				JSONArray jsonArr = jsonObject.getJSONArray("data");
-				if(jsonArr.size() > 0){
+				if(null !=  jsonArr && jsonArr.size() > 0){
 					for(int i = 0; i < jsonArr.size(); i++){
 						VideoInfo videoInfo = new VideoInfo();
 						String cameraId = ((JSONObject)jsonArr.get(i)).getString("cameraId");

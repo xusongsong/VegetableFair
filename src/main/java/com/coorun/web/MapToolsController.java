@@ -763,4 +763,5 @@ public class MapToolsController {
 	    req.setAttribute("labelRange", labelRange);
 	    return "js/mapTools/labelDialog" ;
 	} 
+	
 }
